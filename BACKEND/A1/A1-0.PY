@@ -60,19 +60,29 @@
 # mensagem: &quot;O produto [NOME] agora custa R$ [NOVO_PRECO]!”
 
 
-produto = {"nome": "Teclado Mecânico", "Preco": 200.0, "Estoque": 15}
+# produto = {"nome": "Teclado Mecânico", "Preco": 200.0, "Estoque": 15}
 
-desconto = float(input("Digite a quantidade de desconto que você deseja: "))
-porcentagem_desconto = 0
-valor_final = 0
-valor_produto = 0
+# desconto = float(input("Digite a quantidade de desconto que você deseja: "))
+# porcentagem_desconto = 0
+# valor_final = 0
+# valor_produto = 0
 
-def aplicar_desconto():
-    global valor_final, porcentagem_desconto, valor_produto
-    porcentagem_desconto = desconto / 100 
-    valor_produto = produto.get("Preco")
-    valor_final = float((valor_produto * porcentagem_desconto) - valor_produto)
-    produto["Preco"] = valor_final
+# def aplicar_desconto():
+#     global valor_final, porcentagem_desconto, valor_produto
+#     porcentagem_desconto = desconto / 100 
+#     valor_produto = produto.get("Preco")
+#     valor_final = float((valor_produto * porcentagem_desconto) - valor_produto)
+#     produto["Preco"] = valor_final
 
-aplicar_desconto()
-print(f"O produto {produto.get("nome")} agora custa {produto.get("Preco") *-1 }")
+# aplicar_desconto()
+# print(f"O produto {produto.get("nome")} agora custa {produto.get("Preco") *-1 }")
+
+
+produto = {"nome": "Teclado Mecânico", "Preco": 200.0, "Estoque": 15, "Categoria": "Periféricos"}
+
+def aplicar_desconto(item, porcentagem):
+    item["Categoria"] = item["Preco"]
+    item["Preco"] -= item["Preco"] * (porcentagem / 100)
+    print(f"O produto {item["nome"]}, agora custa {item["Preco"]} e antes custava {item["Categoria"]}")
+
+aplicar_desconto(produto, 10)
