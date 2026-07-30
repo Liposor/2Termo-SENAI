@@ -17,3 +17,5 @@ const total = precoUnitario * quantidade;
 console.log("\n--- Recibo de Venda ---");
 console.log(`Produto: ${nomeProduto}`);
 console.log(`Total a pagar: R$ ${total.toFixed(2)}`);
+
+console.log('');
