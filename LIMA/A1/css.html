@@ -3,30 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>css</title>
+    <title>CSS</title>
+
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f0f2f5;
+            padding: 30px;
+        }
+
+        h1{
+            color: #333;
+        }
+
+        .code-box{
+            background: #1e1e1e;
+            color: #d4d4d4;
+            border-radius: 10px;
+            width: 500px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,.3);
+        }
+
+        .top-bar{
+            background: #2d2d2d;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .bolinha{
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+
+        .vermelha{ background:#ff5f56; }
+        .amarela{ background:#ffbd2e; }
+        .verde{ background:#27c93f; }
+
+        pre{
+            margin:0;
+            padding:20px;
+            font-family: Consolas, monospace;
+            font-size:15px;
+            line-height:1.6;
+        }
+
+        .azul{ color:#569cd6; }
+        .verdeTexto{ color:#6A9955; }
+        .amarelo{ color:#dcdcaa; }
+    </style>
 </head>
+
 <body>
-    <H1>CSS - FORMATAÇÃO</H1>
-    Hyperlinks
 
+<h1>CSS - FORMATAÇÃO</h1>
 
-    <p>
-        podemos <b>criar</b> e formatar páginas da <i>web</i>
-    </p>
-    <big>Podemos ter formatações - Grandes</big><br>
-    <small>E pequenas</small><br>
-    <br>
-    <div class="codeBox">   
-        <div class="codebar">
-                <code><span>
-            print("Exemplo de CSS") <br>
-             css = input("Digite sua formatação")
-             </span class="txt">
-             </code>
-        </div>
+<p>
+    Podemos <b>criar</b> e formatar páginas da <i>web</i>.
+</p>
 
+<big>Podemos ter formatações grandes</big><br>
+<small>E pequenas</small>
+
+<br><br>
+
+<div class="code-box">
+
+    <div class="top-bar">
+        <div class="bolinha vermelha"></div>
+        <div class="bolinha amarela"></div>
+        <div class="bolinha verde"></div>
     </div>
+
+<pre><code><span class="azul">print</span>(<span class="verdeTexto">"Exemplo de CSS"</span>)
+
+css = <span class="amarelo">input</span>(<span class="verdeTexto">"Digite sua formatação"</span>)
+</code></pre>
+
+</div>
+
 </body>
-
-
 </html>
