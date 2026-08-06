@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Aula 02 - HTML 5</title>
+</head>
+<body>
+<div class="principal">
+<div class="linha">
+    <div class="container_Tags">
+        <h1 class="a1">Tags</h1>
+        <p class="g1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt debitis quidem non sed dignissimos corrupti modi nemo veritatis dolores similique aperiam, voluptate consectetur nobis, alias delectus, cumque culpa totam labore?</p>
+    </div>
+
+    <div class="container_CSS">
+        <h1 class="a2">CSS</h1>
+        <p class="g1">Lorem <big>ipsum</big> dolor sit amet consectetur adipisicing elit. Magnam, molestiae ea <b>libero</b>, consequatur, expedita consequuntur neque sunt <u>fugit</u> modi omnis repellat? Dignissimos <small>corporis</small> odit asperiores necessitatibus tenetur delectus earum nulla.</p>
+    </div>
+</div>
+
+<div class="linha">
+    <div class="container_Abreviacao">
+        <h1 class="a3">Abreviações</h1>
+        <hr>
+        <abbr class="g1" title="HyperText Markup Language">HTML</abbr>
+        <abbr class="g1" title="HTML">Linguagem de Marcação</abbr>
+    </div>
+    <div class="container_python">
+    <h1 class="a4">Code</h1>
+
+<pre><code>print("Bem vindo ao Python")
+nome_variavel = input("Digite seu nome: ")
+
+if nome_variavel == "Luis":
+    print("Hello Luis")
+else:
+    print("Erro")</code></pre>
+
+    </div>
+</div>   
+
+<div class="linha">
+    <div class="container_mark">
+        <h1 class="a5">Mark</h1>
+        <p class="g1"> <mark>Lorem ipsum dolor sit amet consectetur adipisicing elit.</mark> Cumque inventore quo nisi a dolorem assumenda numquam enim, unde natus dolores cum <mark>velit</mark> nemo odio excepturi rerum at accusamus amet ratione!</p>
+    </div>
+
+    <div class="container_blockquote">
+        <h1 class="a6">Blockquote</h1>
+        <p ><blockquote cite="https://www.google.com"><small><b>ipsum dolor sit amet consectetur adipisicing elit. Porro nesciunt officia ad placeat nostrum eveniet quia, dignissimos enim iusto a quis consequuntur exercitationem non eaque iure et velit fugiat nisi?</b></small></blockquote></p>
+    </div>
+
+</div>
+
+<div class="linha">
+<a class="botao" href="equipe.html">Próxima Pagina</a>
+</div>
+</div> 
+
+<!-- HiperLigações, HyperLinks, âncoras definidas para ligações de páginas  -->
+
+</body>
+<style>
+
+body {
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+
+
+.principal {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.linha {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+    .container_Tags  {
+
+        
+
+
+        display: flex;
+        width: 400px;
+        height: 230px;
+        margin: auto;
+        align-items: auto;
+        background-color:whitesmoke;
+        border-color: purple;
+        border-radius: 12px;
+        box-shadow:0px 10px 20px green;
+
+    }
+
+        .container_CSS  {
+
+        
+        display: flex;
+        width: 400px;
+        height: 230px;
+        margin: auto;
+        align-items: auto;
+        background-color:whitesmoke;
+        border-color: purple;
+        border-radius: 12px;
+        box-shadow:0px 10px 20px purple;
+        
+        
+
+    }
+
+    .container_Abreviacao  {
+
+        
+        display: flex;
+        width: 400px;
+        height: 230px;
+        margin: auto;
+        align-items: auto;
+        background-color:whitesmoke;
+        border-color: purple;
+        border-radius: 12px;
+        box-shadow:0px 10px 20px blue;
+        
+        
+
+    }
+
+.container_python {
+    display: flex;
+
+    width: 400px;
+    height: 230px;
+    background-color: whitesmoke;
+    border-radius: 12px;
+    box-shadow: 0px 10px 20px red;
+
+}
+
+    .container_mark  {
+
+        
+        display: flex;
+        width: 400px;
+        height: 230px;
+        margin: auto;
+        align-items: auto;
+        background-color:whitesmoke;
+        border-color: purple;
+        border-radius: 12px;
+        box-shadow:0px 10px 20px gray;
+        
+        
+
+    }
+
+    .container_blockquote  {
+
+        
+        display: flex;
+        width: 400px;
+        height: 230px;
+        margin: auto;
+        align-items: auto;
+        background-color:whitesmoke;
+        border-color: purple;
+        border-radius: 12px;
+        box-shadow:0px 10px 20px pink;
+        
+        
+
+    }
+
+    .a6 {
+        padding: 12px;
+        color: pink;
+    }
+
+    .a5 {
+        padding: 12px;
+        color: gray;
+    }
+
+    .a4 {
+        padding: 12px;
+        color: red;
+    }
+
+    .a3 {
+        padding: 12px;
+        color: blue;
+    }
+    .a1 {
+        
+        padding: 12px;
+        color: green;
+    }
+
+    .a2 {
+        
+        padding: 12px;
+        color: purple;
+    }
+
+    .g1 {
+        padding: 12px;
+        padding-top: 24px;
+    }
+
+    .g2 {
+
+        padding-left: -10px;
+    }
+
+    pre {
+    
+    background-color: #1e1e1e;
+    color: #f8f8f2;
+    border-radius: 8px;
+    padding: 12px;
+    overflow-x: auto;
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 11px;
+    line-height: 1.5;
+    margin: 0;
+    flex: 1;
+}
+
+code {
+    white-space: pre;
+}
+
+
+.botao {
+width: 300px;
+background-color: #04AA6D; /* Verde */
+color: white;
+border: none;
+padding: 15px 32px;
+box-shadow:0px 10px 20px gray;
+
+
+font-size: 16px;
+text-align: center;
+cursor: pointer;
+border-radius: 8px; /* Cantos arredondados */
+transition: background-color 0.3s ease; /* Efeito suave */
+}
+
+.botao:hover {
+background-color: #028a5e; /* Cor ao passar o mouse */
+}
+
+
+
+
+    
+
+</style>
+</html>
