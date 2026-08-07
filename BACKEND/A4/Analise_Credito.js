@@ -1,5 +1,7 @@
 const entrada = require('readline-sync')
 
+console.log("--- Seja Bem vindo ao Sistema de Analise de Creditos do SENAI ---")
+
 const nome = entrada.question("Digite seu nome: ")
 const idade = entrada.questionInt("Digite sua idade: ")
 const renda = entrada.questionFloat("Renda Mensal: ")
