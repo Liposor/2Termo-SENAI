@@ -1,8 +1,8 @@
 const entrada = require('readline-sync');
 console.log(" ---------------- Seja bem vindo ao Desafio 3! -----------------")
 
-const gasolina = entrada.questionInt("Quanto esta o valor do litro da Gasolina? ")
-const Alcool = entrada.questionInt("Quanto esta o valor do litro do Alcool? ")
+const gasolina = entrada.questionFloat("Quanto esta o valor do litro da Gasolina? ")
+const Alcool = entrada.questionFloat("Quanto esta o valor do litro do Alcool? ")
 
 const diferenca = Alcool / gasolina
 
