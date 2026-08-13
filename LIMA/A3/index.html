@@ -4,12 +4,92 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="img/imagem.png" type="image/x-icon">
+    
 
     <title>FAVICONS e IMAGENS</title>
 </head>
 <body>
+    <div class="linha">
+    <div class="container">
+        <h1 class="T1">Imagens do Google</h1>
+        <hr>
+        <img class="I1" src="img/images.jpg" width="200px" height="270px" alt="imagem de homem contratual" title="imagem de homem co-ntratual">
+        
+   
+
+    </div>
+
+
+    <div class="container2">
+        <h1 class="T1">Imagem formatada</h1>
+        <hr>
+        <img class="I2" src="img/images.jpg" width="200px" height="270px" alt="imagem de homem contratual" title="imagem de homem co-ntratual" >
+    </div>
+    </div>
+</body>
+<style>
+
+    .linha {
+        display: flex;
+        gap: 10px;
+    }
+    .container {
+        display: flex;
+        width: 400px;
+        height: 330px;
+        margin: auto;
+        align-items: auto;
+        background-color:whitesmoke;
+        border-color: purple;
+        border-radius: 12px;
+        box-shadow:0px 5px 10px purple;
+        
+
+    }
+
+    .container2 {
+        display: flex;
+        width: 400px;
+        height: 330px;
+        margin: auto;
+        align-items: auto;
+        background-color:whitesmoke;
+        border-color: purple;
+        border-radius: 12px;
+        box-shadow:0px 5px 10px green;
+    }
+
+    .T1 {
+        color: purple;
+        padding-left: 20px;
+        font-size: 30px;
+    }
+
+    .I1 {
+        padding: 20px;
+        border-radius: 30px;
+    }
+
+    .I2 {
+    margin-top: 20px;
+    margin-right: 20px;
+    width: 200px;
+    height: 270px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    transition: all 0.4s ease;
+    filter: brightness(1);
+    background-image: url(img/images.jpg);
+}
+
+.I2:hover {
+    transform: scale(1.08);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+    filter: brightness(1.15) contrast(1.05);
+}
 
     
-</body>
+</style>
 </html>
