@@ -27,7 +27,7 @@ const filmes = [
 
 for (i = 0; i < filmes.length; i++) {
     if (idade >= (filmes[i].Classificacao)) {
-        filmes_a.push(" " + filmes[i].Titulo)
+        filmes_a.push(" " +filmes[i].Titulo)
 
     }
 
