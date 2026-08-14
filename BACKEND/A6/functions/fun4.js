@@ -11,4 +11,4 @@ console.log("=== TABELA DE PREÇOS COM DESCONTO (15%) ===")
 
 for (let i = 0; i < produtos.length; i++ ) {
     console.log(`\n O produto ${produtos[i]}, custava o valor de ${preco[i]}, e agora custa ${CalcularDesconto(preco[i])}.`)
-}
+}   
