@@ -1,8 +1,8 @@
 let contador = 0
 
-while (contador <= 100) {
+while (contador <= 1) {
     console.log(`Contagem: ${contador}`)
-    contador ++;
+    contador +=0.00009;
 
 }
 
