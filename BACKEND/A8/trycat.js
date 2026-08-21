@@ -9,7 +9,7 @@ try {
     const resultado = num1 / num2;
     console.log(`Cada maquina recebera: ${resultado.toFixed(2)} kg`);
 
-} catch (erro) {
+} catch (error) {
     console.log("\n[ERRO DE SISTEMA]");
     console.log("Desculpe, voce digitou algo que nao e um numero ou o sistema falhou.");
     console.log("O programa nao travou, mas nao podemos concluir o calculo.");
