@@ -38,6 +38,27 @@ USE Clinica_Medica_Luis;
 -- INSERT INTO NOME_TABELA (CAMPO1, CAMPO2, CAMPO3, CAMPO4, CAMPO5);
 -- VALUES (1, "FALA", "DADO2", 39.00);
 
+-- 3.9 Relacionamentos entre tabelas
+
+-- 1:1 = Um registro se relaciona com apenas um
+-- Ex: Pessoa -> CPF
+
+-- 1:N = Um registro se relaciona com vários
+-- Ex: Cliente -> Pedidos
+
+-- N:1 = Vários registros se relacionam com um
+-- Ex: Pedidos -> Cliente
+
+-- N:N = Vários registros se relacionam com vários
+-- Ex: Alunos <-> Cursos
+-- Usa uma tabela intermediária
+
+-- No relacionamento 1:N, a FK fica normalmente no lado N
+
+-- Exemplo:
+-- CLIENTE (1) -------- (N) PEDIDO
+-- pedido.cliente_id -> cliente.id
+
 
 -- Tabela de Atendimento.
 CREATE TABLE  ATENDIMENTO (

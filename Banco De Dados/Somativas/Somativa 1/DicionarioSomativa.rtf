@@ -1,0 +1,592 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang1046{\fonttbl{\f0\fnil MS Sans Serif;}{\f1\fnil\fcharset0 MS Sans Serif;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\cf1\b\f0\fs16 001 - Atributo: \cf2\b0 Aprovado\cf1\b 
+\par \cf0\b0 
+\par \cf1\b 002 - Rela\f1\'e7\'e3o: \cf2\b0 Busca\cf1\b 
+\par \cf0\b0\f0 Relacionamento entre MODELOS e PECAS. 
+\par Representa a busca ou compatibilidade de pe\f1\'e7as com os modelos de ve\'edculos.
+\par 
+\par Chaves Prim\'e1rias:
+\par ID_Modelo,
+\par ID_Pe\'e7a
+\par \f0 
+\par \cf1\b 003 - Atributo: \cf2\b0 CNPJ_Fornecedor\cf1\b 
+\par \cf0\b0 Campo CNPJ_FORNECEDOR 
+\par tabela FORNECEDORES
+\par  respons\f1\'e1vel por armazenar o CNPJ do fornecedor.
+\par 
+\par Tipo: VARCHAR(20) \f0 
+\par \cf1\b 004 - Atributo: \cf2\b0 CNPJ_Marca\cf1\b 
+\par \cf0\b0 Campo CNPJ_MARCA
+\par tabela MARCAS
+\par  respons\f1\'e1vel por armazenar o CNPJ da marca.
+\par 
+\par Tipo: VARCHAR(20) \f0 
+\par \cf1\b 005 - Atributo: \cf2\b0 CPF_Cliente\cf1\b 
+\par \cf0\b0 Campo CPF_CLIENTE 
+\par tabela CLIENTES
+\par  respons\f1\'e1vel por armazenar o CPF formatado do cliente.
+\par 
+\par Tipo: VARCHAR(14) \f0 
+\par \cf1\b 006 - Atributo: \cf2\b0 CPF_Funcionario\cf1\b 
+\par \cf0\b0 Campo CPF_FUNCIONARIO
+\par tabela FUNCIONARIOS
+\par  respons\f1\'e1vel por armazenar o CPF formatado do funcion\'e1rio.
+\par 
+\par Tipo: VARCHAR(14) \f0 
+\par \cf1\b 007 - Atributo: \cf2\b0 Caminhao\cf1\b 
+\par \cf0\b0 
+\par \cf1\b 008 - Atributo: \cf2\b0 Cargueiro\cf1\b 
+\par \cf0\b0 
+\par \cf1\b 009 - Atributo: \cf2\b0 Carro\cf1\b 
+\par \cf0\b0 
+\par \cf1\b 010 - Entidade: \cf2\b0 Clientes\cf1\b 
+\par \cf0\b0 Tabela direcionada ao Cliente de uma Oficina, respons\f1\'e1vel por Organizar as informa\'e7\'f5es 
+\par de um Cliente
+\par 
+\par Relacionado \'e0 Servico e Veiculo
+\par Cardinalidade do Servico: 1,n e 0,n
+\par Cardinalidade do Veiculo: 1,n e 1,n
+\par \f0 
+\par \cf1\b 011 - Rela\f1\'e7\'e3o: \cf2\b0 Cobra\cf1\b 
+\par \cf0\b0\f0 Relacionamento entre SERVICOS e PAGAMENTO.
+\par  Representa a cobran\f1\'e7a e o pagamento vinculados a um servi\'e7o.
+\par 
+\par CHAVES PRIM\'c1RIAS:
+\par ID_Servicos,
+\par ID_Pagamento
+\par \f0 
+\par \cf1\b 012 - Atributo: \cf2\b0 Combustao\cf1\b 
+\par \cf0\b0 
+\par \cf1\b 013 - Rela\f1\'e7\'e3o: \cf2\b0 Compra\cf1\b 
+\par \cf0\b0\f0 Relacionamento entre PECAS e FORNECEDORES.
+\par Representa a aquisi\f1\'e7\'e3o das pe\'e7as junto aos fornecedores. 
+\par 
+\par Chaves Prim\'e1rias: 
+\par ID_Fornecedor
+\par ID_Pe\'e7a
+\par \f0 
+\par \cf1\b 014 - Rela\f1\'e7\'e3o: \cf2\b0 Consulta\cf1\b 
+\par \cf0\b0\f0 Relacionamento entre SERVICOS e ORDENS_DE_SERVICO. 
+\par Representa a consulta ou vincula\f1\'e7\'e3o de um servi\'e7o \'e0 sua ordem de servi\'e7o. 
+\par 
+\par Chaves Primarias:
+\par ID_Servicos,
+\par ID_Ordem
+\par \f0 
+\par \cf1\b 015 - Atributo: \cf2\b0 Critico\cf1\b 
+\par \cf0\b0 
+\par \cf1\b 016 - Atributo: \cf2\b0 Custo_Peca\cf1\b 
+\par \cf0\b0 Campo CUSTO_PECA
+\par tabela PECAS
+\par  respons\f1\'e1vel por registrar o custo unit\'e1rio da pe\'e7a.
+\par 
+\par Tipo: INT \f0 
+\par \cf1\b 017 - Atributo: \cf2\b0 Data_Cadastro\cf1\b 
+\par \cf0\b0 Campo DATA_CADASTRO 
+\par tabela MARCAS
+\par  respons\f1\'e1vel por registrar a data e a hora de cadastro da marca.
+\par 
+\par Tipo: TIMESTAMP \f0 
+\par \cf1\b 018 - Atributo: \cf2\b0 Data_Chegada\cf1\b 
+\par \cf0\b0 Campo DATA_CHEGADA 
+\par tabela VEICULOS
+\par respons\f1\'e1vel por registrar a data e a hora de chegada do ve\'edculo.
+\par 
+\par Tipo SQL TIMESTAMP \f0 
+\par \cf1\b 019 - Atributo: \cf2\b0 Data_Emissao\cf1\b 
+\par \cf0\b0 Campo DATA_EMISSAO
+\par tabela CLIENTES
+\par  respons\f1\'e1vel por registrar a data e a hora de cria\'e7\'e3o do cadastro.
+\par 
+\par Tipo: TIMESTAMP \f0 
+\par \cf1\b 020 - Atributo: \cf2\b0 Data_Emissao\cf1\b 
+\par \cf0\b0 Campo DATA_EMISSAO
+\par tabela PECAS
+\par  respons\f1\'e1vel por registrar a data e a hora de cadastro da pe\'e7a.
+\par 
+\par Tipo: TIMESTAMP \f0 
+\par \cf1\b 021 - Atributo: \cf2\b0 Data_Emissao\cf1\b 
+\par \cf0\b0 Campo DATA_EMISSAO 
+\par tabela: SERVICOS
+\par  respons\f1\'e1vel por registrar a data e a hora de abertura do servi\'e7o.
+\par 
+\par Tipo: TIMESTAMP \f0 
+\par \cf1\b 022 - Atributo: \cf2\b0 Data_Emissao\cf1\b 
+\par \cf0\b0 Campo DATA_EMISSAO
+\par tabela FUNCIONARIOS
+\par  respons\f1\'e1vel por registrar a data e a hora de cria\'e7\'e3o do cadastro.
+\par 
+\par Tipo: TIMESTAMP \f0 
+\par \cf1\b 023 - Atributo: \cf2\b0 Data_Emissao\cf1\b 
+\par \cf0\b0 Campo DATA_EMISSAO
+\par  tabela FORNECEDORES
+\par  respons\f1\'e1vel por registrar a data e a hora de cadastro do fornecedor.
+\par 
+\par Tipo SQL: TIMESTAMP \f0 
+\par \cf1\b 024 - Atributo: \cf2\b0 Data_Emissao\cf1\b 
+\par \cf0\b0 Campo DATA_EMISSAO
+\par  tabela: PAGAMENTO
+\par  respons\f1\'e1vel por registrar a data e a hora de emiss\'e3o do pagamento.
+\par 
+\par Tipo: TIMESTAMP \f0 
+\par \cf1\b 025 - Atributo: \cf2\b0 Data_Emissao\cf1\b 
+\par \cf0\b0 Campo: DATA_EMISSAO
+\par tabela: ORDENS_DE_SERVICO, 
+\par respons\f1\'e1vel por registrar a data e a hora de emiss\'e3o da ordem.
+\par Tipo: TIMESTAMP \f0 
+\par \cf1\b 026 - Atributo: \cf2\b0 Data_Finalizacao\cf1\b 
+\par \cf0\b0 Campo: DATA_FINALIZACAO 
+\par tabela: SERVICOS
+\par respons\f1\'e1vel por registrar a data e a hora de finaliza\'e7\'e3o do servi\'e7o.
+\par 
+\par Tipo: TIMESTAMP \f0 
+\par \cf1\b 027 - Atributo: \cf2\b0 Data_Nascimento\cf1\b 
+\par \cf0\b0 Campo DATA_NASCIMENTO
+\par tabela CLIENTES
+\par  respons\f1\'e1vel por registrar a data de nascimento do cliente.
+\par 
+\par Tipo: DATE \f0 
+\par \cf1\b 028 - Atributo: \cf2\b0 Data_Saida\cf1\b 
+\par \cf0\b0 Campo DATA_SAIDA 
+\par tabela VEICULOS
+\par  respons\f1\'e1vel por registrar a data de sa\'edda do ve\'edculo.
+\par 
+\par Tipo: DATE \f0 
+\par \cf1\b 029 - Rela\f1\'e7\'e3o: \cf2\b0 Diagnostica\cf1\b 
+\par \cf0\b0\f0 Relacionamento entre SERVICOS e VEICULOS. 
+\par Representa o diagn\f1\'f3stico realizado em um ve\'edculo durante um servi\'e7o.
+\par 
+\par Chaves Primarias:
+\par ID_Veiculos,
+\par ID_Servicos
+\par \f0 
+\par \cf1\b 030 - Atributo: \cf2\b0 Diagnostico_Servico\cf1\b 
+\par \cf0\b0 Campo: DIAGNOSTICO_SERVICO  
+\par tabela: SERVICOS,
+\par  respons\f1\'e1vel por guardar o diagn\'f3stico t\'e9cnico realizado no ve\'edculo.
+\par 
+\par Tipo: VARCHAR(120) \f0 
+\par \cf1\b 031 - Atributo: \cf2\b0 Eletrico\cf1\b 
+\par \cf0\b0 
+\par \cf1\b 032 - Rela\f1\'e7\'e3o: \cf2\b0 Entrega\cf1\b 
+\par \cf0\b0\f0 Relacionamento entre CLIENTES e VEICULOS. 
+\par Representa a entrega ou associa\f1\'e7\'e3o de um ve\'edculo ao cliente atendido. 
+\par 
+\par Chaves Primarias:
+\par ID_Clientes,
+\par ID_Veiculos
+\par \f0 
+\par \cf1\b 033 - Atributo: \cf2\b0 Estado_Veiculo\cf1\b 
+\par \cf0\b0 Campo ESTADO_VEICULO 
+\par tabela VEICULOS
+\par  respons\f1\'e1vel por classificar a gravidade do estado do ve\'edculo.
+\par 
+\par Tipo: ENUM('CRITICO','SIMPLES') \f0 
+\par \cf1\b 034 - Entidade: \cf2\b0 Fornecedores\cf1\b 
+\par \cf0\b0 Tabela direcionada ao Fornecedor de uma Oficina, respons\f1\'e1vel por Organizar as informa\'e7\'f5es 
+\par de um Fornecedor
+\par 
+\par Relacionado \'e0 Pe\'e7as
+\par Cardinalidade da Pe\'e7a: 1,n e 1,n
+\par \f0 
+\par \cf1\b 035 - Atributo: \cf2\b0 Funcao_Funcionario\cf1\b 
+\par \cf0\b0 Campo FUNCAO_FUNCIONARIO
+\par tabela FUNCIONARIOS
+\par  respons\f1\'e1vel por informar a fun\'e7\'e3o exercida pelo funcion\'e1rio.
+\par 
+\par Tipo: VARCHAR(30) \f0 
+\par \cf1\b 036 - Entidade: \cf2\b0 Funcionarios\cf1\b 
+\par \cf0\b0 Tabela direcionada ao Funcionario de uma Oficina, respons\f1\'e1vel por Organizar as informa\'e7\'f5es 
+\par de uma Oficina
+\par 
+\par Relacionado \'e0 Servi\'e7os:
+\par Cardinalidade do Servi\'e7os: 1,n e 0,n
+\par \f0 
+\par \cf1\b 037 - Atributo: \cf2\b0 ID_Clientes\cf1\b 
+\par \cf0\b0 Campo ID_CLIENTES 
+\par tabela CLIENTES
+\par  respons\f1\'e1vel por identificar de forma \'fanica cada cliente.
+\par 
+\par Tipo: INT AUTO_INCREMENT \f0 
+\par \cf1\b 038 - Atributo: \cf2\b0 ID_Fornecedor\cf1\b 
+\par \cf0\b0 Campo ID_FORNECEDOR 
+\par tabela FORNECEDORES
+\par  respons\f1\'e1vel por identificar de forma \'fanica cada fornecedor.
+\par 
+\par Tipo: INT AUTO_INCREMENT \f0 
+\par \cf1\b 039 - Atributo: \cf2\b0 ID_Funcionarios\cf1\b 
+\par \cf0\b0 Campo ID_FUNCIONARIOS
+\par  tabela FUNCIONARIOS
+\par respons\f1\'e1vel por identificar de forma \'fanica cada funcion\'e1rio.
+\par 
+\par Tipo: INT AUTO_INCREMENT \f0 
+\par \cf1\b 040 - Atributo: \cf2\b0 ID_Marca\cf1\b 
+\par \cf0\b0 Campo ID_MARCA 
+\par tabela: MARCAS
+\par  respons\f1\'e1vel por identificar de forma \'fanica cada marca.
+\par 
+\par Tipo: INT AUTO_INCREMENT \f0 
+\par \cf1\b 041 - Atributo: \cf2\b0 ID_Modelo\cf1\b 
+\par \cf0\b0 Campo ID_MODELO 
+\par tabela MODELOS
+\par respons\f1\'e1vel por identificar de forma \'fanica cada modelo.
+\par 
+\par Tipo: INT AUTO_INCREMENT \f0 
+\par \cf1\b 042 - Atributo: \cf2\b0 ID_Ordem\cf1\b 
+\par \cf0\b0 Campo: ID_ORDEM
+\par tabela: ORDENS_DE_SERVICO,
+\par respons\f1\'e1vel por identificar de forma \'fanica cada ordem de servi\'e7o.
+\par Tipo: INT AUTO_INCREMENT \f0 
+\par \cf1\b 043 - Atributo: \cf2\b0 ID_Pagamento\cf1\b 
+\par \cf0\b0 Campo ID_PAGAMENTO
+\par tabela: PAGAMENTO
+\par respons\f1\'e1vel por identificar de forma \'fanica cada pagamento.
+\par 
+\par Tipo: INT AUTO_INCREMENT \f0 
+\par \cf1\b 044 - Atributo: \cf2\b0 ID_Peca\cf1\b 
+\par \cf0\b0 Campo ID_PECA
+\par tabela PECAS
+\par  respons\f1\'e1vel por identificar de forma \'fanica cada pe\'e7a.
+\par 
+\par Tipo: INT AUTO_INCREMENT \f0 
+\par \cf1\b 045 - Atributo: \cf2\b0 ID_Servicos\cf1\b 
+\par \cf0\b0 Campo: ID_SERVICOS
+\par tabela: SERVICOS
+\par respons\f1\'e1vel por identificar de forma \'fanica cada servi\'e7o.
+\par 
+\par Tipo: INT AUTO_INCREMENT \f0 
+\par \cf1\b 046 - Atributo: \cf2\b0 ID_Veiculos\cf1\b 
+\par \cf0\b0 Campo ID_VEICULOS 
+\par tabela VEICULOS
+\par  respons\f1\'e1vel por identificar de forma \'fanica cada ve\'edculo.
+\par 
+\par Tipo: INT AUTO_INCREMENT \f0 
+\par \cf1\b 047 - Atributo: \cf2\b0 Link_Manual\cf1\b 
+\par \cf0\b0 Campo LINK_MANUAL 
+\par tabela MODELOS
+\par  respons\f1\'e1vel por armazenar o endere\'e7o eletr\'f4nico do manual t\'e9cnico.
+\par 
+\par Tipo: VARCHAR(50) \f0 
+\par \cf1\b 048 - Atributo: \cf2\b0 Manutencao\cf1\b 
+\par \cf0\b0 
+\par \cf1\b 049 - Entidade: \cf2\b0 Marcas\cf1\b 
+\par \cf0\b0 Tabela direcionada a Marcas de uma Oficina, respons\f1\'e1vel por Organizar as informa\'e7\'f5es 
+\par de uma Marca
+\par 
+\par Relacionado \'e0 Veiculo, Modelo
+\par Cardinalidade do Veiculo: 1,n e 1,1
+\par Cardinalidade do Modelo: 1,n e 1,1
+\par \f0 
+\par \cf1\b 050 - Entidade: \cf2\b0 Modelos\cf1\b 
+\par \cf0\b0 Tabela direcionada aos Modelos de uma Oficina, respons\f1\'e1vel por Organizar as informa\'e7\'f5es 
+\par de um Modelo
+\par 
+\par Relacionado \'e0 Marcas e Pe\'e7as
+\par Cardinalidade da Marca: 1,1 e 1,n
+\par Cardinalidade da Pe\'e7a: 1,n e 1,1
+\par \f0 
+\par \cf1\b 051 - Atributo: \cf2\b0 Moto\cf1\b 
+\par \cf0\b0 
+\par \cf1\b 052 - Atributo: \cf2\b0 Nacionalidade\cf1\b 
+\par \cf0\b0 Campo NACIONALIDADE 
+\par tabela CLIENTES
+\par respons\f1\'e1vel por registrar a nacionalidade do cliente.
+\par 
+\par Tipo: VARCHAR(50) \f0 
+\par \cf1\b 053 - Atributo: \cf2\b0 Nacionalidade\cf1\b 
+\par \cf0\b0 Campo NACIONALIDADE
+\par tabela MARCAS
+\par  respons\f1\'e1vel por registrar o pa\'eds de origem da marca.
+\par 
+\par Tipo: VARCHAR(50) \f0 
+\par \cf1\b 054 - Atributo: \cf2\b0 Nacionalidade\cf1\b 
+\par \cf0\b0 Campo NACIONALIDADE 
+\par tabela FORNECEDORES
+\par  respons\f1\'e1vel por registrar o pa\'eds de origem do fornecedor.
+\par 
+\par Tipo: VARCHAR(50) \f0 
+\par \cf1\b 055 - Atributo: \cf2\b0 Nao\cf1\b 
+\par \cf0\b0 
+\par \cf1\b 056 - Atributo: \cf2\b0 Negado\cf1\b 
+\par \cf0\b0 
+\par \cf1\b 057 - Atributo: \cf2\b0 Nome_Cliente\cf1\b 
+\par \cf0\b0 Campo NOME_CLIENTE
+\par tabela CLIENTES
+\par  respons\f1\'e1vel por armazenar o nome completo do cliente.
+\par 
+\par Tipo: VARCHAR(60) \f0 
+\par \cf1\b 058 - Atributo: \cf2\b0 Nome_Funcionario\cf1\b 
+\par \cf0\b0 Campo NOME_FUNCIONARIO
+\par tabela FUNCIONARIOS
+\par  respons\f1\'e1vel por armazenar o nome completo do funcion\'e1rio.
+\par 
+\par Tipo: VARCHAR(60) \f0 
+\par \cf1\b 059 - Atributo: \cf2\b0 Nome_Marca\cf1\b 
+\par \cf0\b0 Campo Nome_Marca
+\par  tabela MARCAS
+\par  respons\f1\'e1vel por informar o nome da Marca.
+\par 
+\par Tipo: VARCHAR(30) \f0 
+\par \cf1\b 060 - Atributo: \cf2\b0 Nome_Modelo\cf1\b 
+\par \cf0\b0 Campo NOME_MODELO 
+\par tabela MODELOS
+\par  respons\f1\'e1vel por armazenar o nome comercial do modelo.
+\par 
+\par Tipo: VARCHAR(60) \f0 
+\par \cf1\b 061 - Atributo: \cf2\b0 Nome_Peca\cf1\b 
+\par \cf0\b0 Campo NOME_PECA 
+\par tabela PECAS
+\par respons\f1\'e1vel por armazenar o nome da pe\'e7a.
+\par 
+\par Tipo: VARCHAR(60) \f0 
+\par \cf1\b 062 - Atributo: \cf2\b0 Observacao_Servico\cf1\b 
+\par \cf0\b0 Campo: OBSERVACAO_SERVICO
+\par tabela: SERVICOS, 
+\par respons\f1\'e1vel por guardar observa\'e7\'f5es complementares sobre o servi\'e7o.
+\par 
+\par Tipo: VARCHAR(250) \f0 
+\par \cf1\b 063 - Atributo: \cf2\b0 Observacoes_Modelo\cf1\b 
+\par \cf0\b0 Campo: Observacoes_Modelo
+\par tabela: Modelo, 
+\par respons\f1\'e1vel por guardar observa\'e7\'f5es complementares sobre o servi\'e7o.
+\par 
+\par Tipo: VARCHAR(250) \f0 
+\par \cf1\b 064 - Atributo: \cf2\b0 Observacoes_Veiculo\cf1\b 
+\par \cf0\b0 Campo OBSERVACOES_VEICULO 
+\par tabela VEICULOS
+\par respons\f1\'e1vel por guardar observa\'e7\'f5es sobre as condi\'e7\'f5es e particularidades do ve\'edculo.
+\par 
+\par Tipo : VARCHAR(250) \f0 
+\par \cf1\b 065 - Observa\f1\'e7\'e3o: \cf2\b0 Oficina Somativa Luis\cf1\b 
+\par \cf0\b0\f0 
+\par \cf1\b 066 - Entidade: \cf2\b0 Ordens de Servico\cf1\b 
+\par \cf0\b0 Tabela direcionada a Ordem de Servi\f1\'e7os de uma Oficina, respons\'e1vel por Organizar as informa\'e7\'f5es 
+\par da Ordem de Servi\'e7os
+\par 
+\par Relacionado \'e0 Servicos
+\par Cardinalidade de Servi\'e7os: 1,n e 1,1
+\par \f0 
+\par \cf1\b 067 - Entidade: \cf2\b0 Pagamento\cf1\b 
+\par \cf0\b0 Tabela direcionada ao Pagamento de uma Oficina, respons\f1\'e1vel por Organizar as informa\'e7\'f5es 
+\par de uma Oficina
+\par 
+\par Relacionado \'e0 Servi\'e7os
+\par Cardinalidade do Servi\'e7o: 1,1 e 0,1
+\par \f0 
+\par \cf1\b 068 - Atributo: \cf2\b0 Parcelas\cf1\b 
+\par \cf0\b0 Campo PARCELAS
+\par tabela PAGAMENTO
+\par respons\f1\'e1vel por registrar a quantidade de parcelas do pagamento.
+\par 
+\par Tipo: INT \f0 
+\par \cf1\b 069 - Atributo: \cf2\b0 Parceria\cf1\b 
+\par \cf0\b0 Campo PARCERIA 
+\par tabela MARCAS
+\par  respons\f1\'e1vel por indicar se a marca mant\'e9m parceria com a oficina.
+\par 
+\par Tipo: ENUM('SIM','NAO') \f0 
+\par \cf1\b 070 - Entidade: \cf2\b0 Pecas\cf1\b 
+\par \cf0\b0 Tabela direcionada a Pe\f1\'e7as de uma Oficina, respons\'e1vel por Organizar as informa\'e7\'f5es 
+\par de uma Pe\'e7a
+\par 
+\par Relacionado \'e0 Modelo, Servicos, Fornecedores
+\par Cardinalidade do Modelo: 1,1 e 1,n
+\par Cardinalidade do Fornecedor: 1,n e 1,n
+\par Cardinalidade do Servi\'e7o: 1,n e 1,n \f0 
+\par \cf1\b 071 - Rela\f1\'e7\'e3o: \cf2\b0 Pertence\cf1\b 
+\par \cf0\b0\f0 Relacionamento entre MARCAS e MODELOS. 
+\par Representa quais modelos pertencem a cada marca. 
+\par 
+\par Chaves Prim\f1\'e1rias:
+\par ID_Marca,
+\par ID_Modelo
+\par \f0 
+\par \cf1\b 072 - Atributo: \cf2\b0 Peso_Peca\cf1\b 
+\par \cf0\b0 Campo PESO_PECA
+\par tabela PECAS
+\par respons\f1\'e1vel por registrar o peso adotado para a pe\'e7a.
+\par 
+\par Tipo: INT \f0 
+\par \cf1\b 073 - Atributo: \cf2\b0 Pintura\cf1\b 
+\par \cf0\b0 
+\par \cf1\b 074 - Atributo: \cf2\b0 Prazo_Final\cf1\b 
+\par \cf0\b0 Campo: PRAZO_FINAL
+\par tabela: ORDENS_DE_SERVICO,
+\par  respons\f1\'e1vel por registrar a data limite para conclus\'e3o da ordem.
+\par Tipo: DATE \f0 
+\par \cf1\b 075 - Atributo: \cf2\b0 Prioridade\cf1\b 
+\par \cf0\b0 Campo: PRIORIDADE
+\par tabela: ORDENS_DE_SERVICO
+\par respons\f1\'e1vel por classificar a prioridade de atendimento da ordem.
+\par Tipo: ENUM('URGENTE','SIMPLES') \f0 
+\par \cf1\b 076 - Atributo: \cf2\b0 Problemas_Cronicos\cf1\b 
+\par \cf0\b0 Campo PROBLEMAS_CRONICOS 
+\par tabela MODELOS
+\par  respons\f1\'e1vel por descrever problemas recorrentes conhecidos do modelo.
+\par 
+\par Tipo: TEXT \f0 
+\par \cf1\b 077 - Atributo: \cf2\b0 Ranking_Ordem\cf1\b 
+\par \cf0\b0 Campo: RANKING_ORDEM 
+\par tabela: ORDENS_DE_SERVICO,
+\par respons\f1\'e1vel por armazenar a classifica\'e7\'e3o ou o ranking atribu\'eddo \'e0 ordem.
+\par Tipo: VARCHAR(40) \f0 
+\par \cf1\b 078 - Rela\f1\'e7\'e3o: \cf2\b0 Registra\cf1\b 
+\par \cf0\b0\f0 Relacionamento entre CLIENTES e SERVICOS. 
+\par Representa o registro dos servi\f1\'e7os vinculados a um cliente.
+\par 
+\par Chaves Prim\'e1rias:
+\par ID_Clientes,
+\par ID_Servicos
+\par \f0 
+\par \cf1\b 079 - Entidade: \cf2\b0 Servicos\cf1\b 
+\par \cf0\b0 Tabela direcionada aos Servi\f1\'e7os de uma Cafeteria, respons\'e1vel por Organizar as informa\'e7\'f5es 
+\par de um Servi\'e7o
+\par 
+\par Relacionado \'e0 Funcionario, Cliente, Funcion\'e1rio, Veiculo, Pe\'e7a, Ordem de Servi\'e7o e Pagamento
+\par Cardinalidade dos Cliente: 0,n e 1,n
+\par Cardinalidade dos Funcion\'e1rios: 0,n e 1,n
+\par Cardinalidade dos Veiculos: 1,1 e 1,1
+\par Cardinalidade da Pe\'e7a: 1,n e 1,n
+\par Cardinalidade da Ordem de Servi\'e7o: 1,1 e 1,n
+\par Cardinalidade do Pagamento: 0,1 e 1,1
+\par \f0 
+\par \cf1\b 080 - Atributo: \cf2\b0 Sim\cf1\b 
+\par \cf0\b0 
+\par \cf1\b 081 - Atributo: \cf2\b0 Simples\cf1\b 
+\par \cf0\b0 
+\par \cf1\b 082 - Atributo: \cf2\b0 Simples\cf1\b 
+\par \cf0\b0 
+\par \cf1\b 083 - Atributo: \cf2\b0 Status_Pagamento\cf1\b 
+\par \cf0\b0 Campo STATUS_PAGAMENTO
+\par tabela PAGAMENTO
+\par  respons\f1\'e1vel por registrar o resultado de aprova\'e7\'e3o do pagamento.
+\par 
+\par Tipo: ENUM('APROVADO','NEGADO') \f0 
+\par \cf1\b 084 - Atributo: \cf2\b0 Tamanho_Peca\cf1\b 
+\par \cf0\b0 Campo TAMANHO_PECA 
+\par tabela PECAS
+\par  respons\f1\'e1vel por registrar a medida de tamanho adotada para a pe\'e7a.
+\par 
+\par Tipo: INT \f0 
+\par \cf1\b 085 - Atributo: \cf2\b0 Telefone_Cliente\cf1\b 
+\par \cf0\b0 Campo TELEFONE_CLIENTE 
+\par tabela CLIENTES
+\par  respons\f1\'e1vel por armazenar um telefone de contato do cliente.
+\par 
+\par Tipo: VARCHAR(14) \f0 
+\par \cf1\b 086 - Atributo: \cf2\b0 Telefone_Fornecedor\cf1\b 
+\par \cf0\b0 Campo TELEFONE_FORNECEDOR 
+\par tabela FORNECEDORES
+\par  respons\f1\'e1vel por armazenar um telefone de contato do fornecedor.
+\par 
+\par Tipo: VARCHAR(14) \f0 
+\par \cf1\b 087 - Atributo: \cf2\b0 Telefone_Funcionario\cf1\b 
+\par \cf0\b0 Campo TELEFONE_FUNCIONARIO 
+\par tabela FUNCIONARIOS
+\par  respons\f1\'e1vel por armazenar um telefone de contato do funcion\'e1rio.
+\par 
+\par Tipo: VARCHAR(14) \f0 
+\par \cf1\b 088 - Atributo: \cf2\b0 Telefone_Marca\cf1\b 
+\par \cf0\b0 Campo TELEFONE_MARCA 
+\par tabela MARCAS
+\par  respons\f1\'e1vel por armazenar um telefone de contato da marca.
+\par 
+\par Tipo: VARCHAR(14) \f0 
+\par \cf1\b 089 - Atributo: \cf2\b0 Tipo_Caso\cf1\b 
+\par \cf0\b0 Campo TIPO_CASO
+\par tabela: ORDENS_DE_SERVICO,
+\par respons\f1\'e1vel por descrever a categoria do caso atendido pela ordem.
+\par 
+\par Tipo: VARCHAR(30) \f0 
+\par \cf1\b 090 - Atributo: \cf2\b0 Tipo_Entrega\cf1\b 
+\par \cf0\b0 Campo TIPO_ENTREGA 
+\par tabela FORNECEDORES
+\par  respons\f1\'e1vel por classificar o meio utilizado na entrega.
+\par 
+\par Tipo: ENUM('CAMINHAO','CARGUEIRO') \f0 
+\par \cf1\b 091 - Atributo: \cf2\b0 Tipo_Motor\cf1\b 
+\par \cf0\b0 Campo TIPO_MOTOR
+\par  tabela MODELOS
+\par  respons\f1\'e1vel por classificar o motor como el\'e9trico ou a combust\'e3o.
+\par 
+\par Tipo: ENUM('ELETRICO','COMBUSTAO') \f0 
+\par \cf1\b 092 - Atributo: \cf2\b0 Tipo_Pagamento\cf1\b 
+\par \cf0\b0 Campo TIPO_PAGAMENTO
+\par tabela: PAGAMENTO
+\par  respons\f1\'e1vel por informar o meio ou a modalidade de pagamento.
+\par 
+\par Tipo : VARCHAR(35) \f0 
+\par \cf1\b 093 - Atributo: \cf2\b0 Tipo_Servico\cf1\b 
+\par \cf0\b0 Campo: TIPO_SERVICO 
+\par tabela: SERVICOS, 
+\par respons\f1\'e1vel por classificar o servi\'e7o como manuten\'e7\'e3o ou pintura.
+\par Tipo: ENUM('MANUTENCAO','PINTURA') \f0 
+\par \cf1\b 094 - Atributo: \cf2\b0 Tipo_Veiculo\cf1\b 
+\par \cf0\b0 Campo TIPO_VEICULO
+\par  tabela VEICULOS
+\par  respons\f1\'e1vel por classificar o ve\'edculo como moto ou carro.
+\par 
+\par Tipo: ENUM('MOTO','CARRO') \f0 
+\par \cf1\b 095 - Atributo: \cf2\b0 Tipo_Veiculos\cf1\b 
+\par \cf0\b0 Campo TIPO_VEICULOS
+\par  tabela MARCAS
+\par  respons\f1\'e1vel por informar os tipos de ve\'edculos produzidos pela marca.
+\par 
+\par Tipo: VARCHAR(30) \f0 
+\par \cf1\b 096 - Rela\f1\'e7\'e3o: \cf2\b0 Trabalha\cf1\b 
+\par \cf0\b0\f0 Relacionamento entre FUNCIONARIOS e SERVICOS. 
+\par Representa quais funcion\f1\'e1rios trabalham ou participam da execu\'e7\'e3o de cada servi\'e7o.
+\par 
+\par Chaves Prim\'e1rias:
+\par ID_Funcionarios,
+\par ID_Servi\'e7os
+\par \f0 
+\par \cf1\b 097 - Rela\f1\'e7\'e3o: \cf2\b0 Troca\cf1\b 
+\par \cf0\b0\f0 Relacionamento entre SERVICOS e PECAS. 
+\par Representa as pe\f1\'e7as utilizadas ou trocadas durante a execu\'e7\'e3o de um servi\'e7o.
+\par 
+\par Chaves Primarias:
+\par ID_Servicos,
+\par ID_Pe\'e7a
+\par \f0 
+\par \cf1\b 098 - Atributo: \cf2\b0 Turno\cf1\b 
+\par \cf0\b0 Campo TURNO
+\par tabela FUNCIONARIOS 
+\par respons\f1\'e1vel por informar o turno de trabalho do funcion\'e1rio.
+\par 
+\par Tipo: VARCHAR(50) \f0 
+\par \cf1\b 099 - Atributo: \cf2\b0 Urgente\cf1\b 
+\par \cf0\b0 
+\par \cf1\b 100 - Atributo: \cf2\b0 Valor_Pago\cf1\b 
+\par \cf0\b0 Campo VALOR_PAGO
+\par tabela: PAGAMENTO
+\par  respons\f1\'e1vel por armazenar o valor efetivamente pago.
+\par 
+\par Tipo: DECIMAL(20,2) \f0 
+\par \cf1\b 101 - Atributo: \cf2\b0 Valor_Total\cf1\b 
+\par \cf0\b0 Campo VALOR_TOTAL 
+\par tabela: SERVICOS
+\par respons\f1\'e1vel por armazenar o valor total calculado para o servi\'e7o.
+\par 
+\par Tipo: DECIMAL(20,2) \f0 
+\par \cf1\b 102 - Entidade: \cf2\b0 Veiculos\cf1\b 
+\par \cf0\b0 Tabela direcionada ao Veiculo de uma Oficina, respons\f1\'e1vel por Organizar as informa\'e7\'f5es 
+\par de um Veiculo
+\par 
+\par Relacionado \'e0 Marcas, Cliente, Servicos
+\par Cardinalidade do Servicos: 1,1 e 1,1
+\par Cardinalidade do Cliente: 1,n e 1,n
+\par Cardinalidade da Marca: 1,1 e 1,n
+\par \f0 
+\par \cf1\b 103 - Rela\f1\'e7\'e3o: \cf2\b0 Verifica\cf1\b 
+\par \cf0\b0\f0 Relacionamento entre MARCAS e VEICULOS. 
+\par Representa a identifica\f1\'e7\'e3o da marca correspondente a cada ve\'edculo. 
+\par 
+\par Chaves Primarias:
+\par ID_Veiculos,
+\par ID_Marca
+\par \f0 
+\par 
+\par }
+ 
