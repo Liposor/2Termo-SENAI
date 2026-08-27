@@ -1,0 +1,19 @@
+h1 {
+    color: purple;
+    font-size: 40px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    background-color: whitesmoke;
+    border: black 1px solid;
+    border-radius: 15px;
+}
+
+p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    border: 1px solid;
+    border-radius: 10px;
+    text-align: center;
+    margin: 30px;
+    
+}
