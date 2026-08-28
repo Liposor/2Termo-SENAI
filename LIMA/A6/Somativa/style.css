@@ -1,0 +1,131 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: whitesmoke;
+}
+
+header {
+    background-color: rgb(33, 33, 114);
+    padding: 25px;
+    border: black 4px solid;
+    display: fixed;
+}
+
+.Titulo_Header {
+    color: white;
+    text-align: center;
+    font-size: 50px;
+    
+}
+
+.Sobre_Header {
+    color: white;
+    text-align: center;
+
+}
+
+nav  {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+}
+
+nav a {
+
+    color: white;
+    text-align: center;
+
+    text-decoration: none;
+}
+
+.Titulos_2 {
+    color: rgb(33, 33, 114);
+    text-align: center;
+    font-size: 28px;
+}
+
+.Titulo_3 {
+    color: rgb(33, 33, 114)
+}
+
+.Titulo_4 {
+    color: rgb(33, 33, 114);
+    text-align: center;
+}
+
+.Section_1 {
+    background-color: white;
+
+    margin: 10px;
+    margin-top: 50px;
+    padding: 20px;
+    border: whitesmoke 8px solid;
+}
+
+.Section_2 {
+    background-color: rgb(195, 231, 255);
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+
+    border: rgb(166, 203, 214) 3px solid;
+}
+
+.Section_3 {
+    background-color: whitesmoke;
+    padding: 20px;
+    margin: 20px;
+    border: rgb(214, 214, 214) 3px solid;
+
+}
+
+.Section_3 p {
+    text-align: center;
+}
+
+.Section_4 {
+    background-color: whitesmoke;
+    padding: 20px;
+    margin: 20px;
+    border: rgb(214, 214, 214) 3px solid;
+
+}
+
+img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Contato_Button {
+    background-color: rgb(33, 33, 114);
+    color: white;
+    margin-top: 10px;
+    padding: 15px;
+    
+}
+
+footer {
+    background-color: rgb(33, 33, 114);
+    padding: 10px;
+}
+
+footer p {
+    color: white;
+    text-align: center;
+}
+
+.PFP {
+    width: 200px;
+    margin-left:    760px;
+}
+
+.Dev_Img{
+    width: 700px;
+    margin-left:    540px;
+}
+
+.Dev_Img2{
+    width: 700px;
+}
