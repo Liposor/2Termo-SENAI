@@ -139,12 +139,11 @@ As primeiras páginas apresentam tags e estilos básicos. Em seguida aparecem na
 
 ```mermaid
 xychart-beta
-    title "Evolução por etapa de aprendizagem"
+    title "Evolução geral no 2º termo"
     x-axis ["Fundamentos", "Aplicação", "Projeto/Avaliação"]
     y-axis "Complexidade prática" 0 --> 100
-    line "BACKEND" [25, 62, 91]
-    line "BCD" [30, 68, 88]
-    line "LIMA" [28, 66, 93]
+    bar [28, 65, 91]
+    line [28, 65, 91]
 ```
 
 | Área | Fundamentos | Aplicação prática | Estado atual |
