@@ -107,3 +107,85 @@ INSERT INTO forma_pagamento (descricao) VALUES ('CREDITO'), ('DEBITO'), ('PIX'),
 
 INSERT INTO pagamento (id_pedido, id_forma_pagamento, valor, data_pagamento) VALUES (1, 2, 19.90, '2026-01-24'), (2, 3, 8.90, '2026-03-31'), (3, 4, 39.90, '2026-01-12'), (4, 5, 1.90, '2026-01-15'), (5, 1, 29.90, '2026-01-15');
 
+
+UPDATE cliente
+SET telefone = '193913919'
+WHERE id_cliente = 27;
+
+UPDATE produto SET PRECO = 1.00;
+
+UPDATE CLIENTE TELEFONE = '90909090', CIDADE = 'CAMPINAS' WHERE ID_CLIENTE = 11;
+
+insert into pedido (data_pedido, status, valor_total, id_cliente) VALUES (NOW(), 'ABERTO', '0.00', 30);
+SET @pedido = LAST_INSERT_ID();
+SELECT @pedido;
+
+UPDATE produto SET preco = preco * 1.05 WHERE id_categoria = 1;
+
+UPDATE produto
+SET PRECO = CASE 
+  WHEN PRECO < 10 THEN PRECO * 1.10  
+  ELSE  PRECO * 1.05
+END
+WHERE ATIVO = TRUE;
+
+-- separacao da resenha e do trabalho 
+
+DELETE FROM cliente WHERE id_cliente = 27;
+
+UPDATE CLIENTE SET ATIVO = FALSE WHERE ID_CLIENTE = 10;
+
+
+
+
+
+
+
+
+
+
+
+
+USE SMARTCOFFEE_DML_LUIS;
+
+
+-- DESAFIOS
+
+-- PLAN A
+
+INSERT INTO cliente (nome, email, telefone, cidade, ativo) VALUES ('Roberto Loreal', 'robertoLo@email.com', '19998359331', 'Limeira', TRUE), ('Joao Pedro', 'JpFormiga@email.com', NULL, 'Campinas', FALSE); --1
+INSERT INTO categoria (nome) VALUES ('Especiais da Casa'); -- 2
+INSERT INTO produto (nome, preco, ativo, id_categoria) VALUES ('Picanha na chapa', '190.0', TRUE, 16), ('Hamburguer do Chefe', '49.0', TRUE, 16), ('Guacamole com doritos', '89.90', TRUE, 16); -- 3
+INSERT INTO cliente (nome, email, telefone, cidade, ativo) VALUES ('Manuel', 'manuel@email.com', NULL, 'Limeira', TRUE); -- 4
+INSERT INTO pedido (data_pedido, status, valor_total, id_cliente) VALUES ('2026-05-27', 'Finalizado', 19.90, 35); --5
+
+
+-- 6
+SET @pedido = LAST_INSERT_ID();
+INSERT INTO item_pedido
+(id_pedido, id_produto, quantidade, preco_unitario, observacao)
+VALUES (@pedido, 8, 1, 89.90, 'Guacamole sem abacate'),
+(@pedido, 6, 1, 190.00, 'Picanha sem gordura');
+
+
+
+
+-- PLAN B
+
+-- 1
+UPDATE cliente
+SET telefone = '9090909090'
+WHERE id_cliente = 35;
+
+-- 2
+
+UPDATE cliente
+SET telefone = '193913919', cidade = 'Sapucai Mirim'
+WHERE id_cliente = 35;
+
+-- 3
+UPDATE produto SET preco = preco * 1.05 WHERE id_categoria = 16;
+
+
+-- 4]
+UPDATE produtos SET status = 'PREPARANDO' where 
