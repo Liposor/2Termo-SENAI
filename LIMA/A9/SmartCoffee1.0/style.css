@@ -1,0 +1,197 @@
+
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(255, 249, 243);
+  
+}
+
+header {
+  background-color: rgb(87,40,19);
+  width: 100%;
+  height: 100px;
+  display: fixed;
+}
+
+.T1-Smart {
+  position: absolute;
+  color: white;
+  left: 6%;
+    top: 2%;
+}
+
+.T1-Coffee {
+  position: absolute;
+  color: rgb(186, 157, 138);
+    left: 11%;
+    top: 2%;
+}
+
+nav {
+    position: relative;
+  display: flex;
+
+  gap: 20px;
+  left: 75%;
+  top: 24%;
+}
+
+nav a {
+
+  font-size: 20px;
+
+  
+
+  color:  rgb(186, 157, 138);
+  text-align: center;
+  text-decoration: none;
+} 
+
+nav a:hover {
+  color: rgb(255, 249, 243);
+  text-align: center;
+  text-decoration: none;
+    transform: translateY(-1px);
+      box-shadow: 0 16px 22px -8px white;
+}
+
+nav a:active {
+
+  transform: translateY(-2px) scale(0.97);
+}
+
+
+.inicio {
+    background-color: rgb(255, 249, 243);
+}
+
+.T1-Inicio {
+      position: relative;
+    display: flex;
+  font-size: 80px;
+  width: 650px;
+  padding-top: 250px;
+  padding-left: 40px;
+  margin: 0px;
+}
+
+.T3-Inicio {
+    margin: 0px;
+    position: relative;
+    display: flex;
+  
+    font-size: 30px;
+    width: 650px;
+    padding-left: 40px;
+    
+}
+
+.B1-Inicio {
+  background-color: rgb(84, 40, 19);
+  margin: 40px;
+  width: 250px;
+  height: 70px;
+  color: white;
+  border-radius: 30px;
+  font-size: 30px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: rgb(84, 40, 19) 4px solid;
+}
+
+.B1-Inicio:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 22px -8px rgba(0, 0, 0, 0.35);
+}
+
+.B1-Inicio:active {
+  transform: translateY(-2px) scale(0.97);
+}
+
+.IMG-Inicio {
+  position: absolute;
+  display: flex;
+  width: 945px;
+  height: 680px;
+  left: 45%;
+  top: 19%;
+  background-color: rgb(186, 157, 138);
+  border-radius: 30px;
+  color: white;
+  font-size: 40px;
+  
+}
+
+.Inicio {
+  width: auto;
+  height: 800px;
+}
+
+.Quem-Somos {
+    background-color: rgb(186, 157, 138);
+    width: auto;
+    height: 600px;
+}
+
+.P1-Quem {
+  color: rgb(255, 249, 243);
+  font-size: 32px;
+  padding-left: 40px;
+  padding-top: 120px;
+  margin: 0px;
+}
+
+.H1-Quem {
+    margin: 0px;  
+  color: white;
+  font-size: 80px;
+  padding-left: 40px;
+}
+
+.H3-Quem {
+  color: white;
+  margin: 0px;
+  padding-left: 40px;
+  width: 800px;
+}
+
+.IMG-Quem {
+    position: absolute;
+      display: flex;
+      width: 700px;
+      height: 422px;
+      left: 50%;
+      top: 105%;
+      background-color: rgb(255, 249, 243);
+      border-radius: 30px;
+      color: rgb(84, 40, 19);
+      font-size: 40px;
+}
+
+.B1-Quem {
+  background-color: white;
+    margin: 40px;
+    width: 250px;
+    height: 70px;
+    color: rgb(84, 40, 19);
+    border-radius: 30px;
+    font-size: 30px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: white 4px solid;
+  }
+  
+  .B1-Quem:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 22px -8px rgba(0, 0, 0, 0.35);
+  }
+  
+  .B1-Quem:active {
+    transform: translateY(-2px) scale(0.97);
+  }
+
+  .Nosso-Ambiente {
+    background-color: rgb(87, 40, 19);
+    width: auto;
+    height: 600px;
+  }
