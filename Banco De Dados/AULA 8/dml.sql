@@ -189,7 +189,8 @@ SET telefone = '193913919', cidade = 'Sapucai Mirim'
 WHERE id_cliente = 35;
 
 -- 9
-UPDATE produto SET preco = preco * 1.05 WHERE id_categoria = 16;
+UPDATE produto SET preco = preco * 1.08 WHERE id_categoria = 16;
+-- WHERE id_categoria = @Categoria_Especial;
 
 
 -- 10
@@ -197,6 +198,9 @@ UPDATE pedido SET status = 'PREPARANDO' where id_pedido = @pedido;
 
 -- 11
 UPDATE pedido SET valor_total = 180.0 where id_pedido = @pedido;
+
+-- JEITO  DO PROFESSOR
+-- UPDATE PEDIDO SET VALOR_TOTAL = (SELECT NUM(QUANTIDADE *PRECO_UNITARIO) FROM ITEM_PEDIDO WHERE ID_PEDIDO=@PEDIDO_ATIVIDADE);
 
 -- 12
 UPDATE produto SET ATIVO = FALSE WHERE id_produto = 4;
@@ -220,7 +224,7 @@ DELETE FROM cliente WHERE id_cliente = 35;
 
 -- 16
 INSERT INTO categoria (nome) VALUES ('Teste');
-DELETE FROM categoria WHERE id_categoria = 17;
+DELETE FROM categoria WHERE noem = 'Teste';
 
 
 
