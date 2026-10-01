@@ -107,151 +107,101 @@ INSERT INTO forma_pagamento (descricao) VALUES ('CREDITO'), ('DEBITO'), ('PIX'),
 
 INSERT INTO pagamento (id_pedido, id_forma_pagamento, valor, data_pagamento) VALUES (1, 2, 19.90, '2026-01-24'), (2, 3, 8.90, '2026-03-31'), (3, 4, 39.90, '2026-01-12'), (4, 5, 1.90, '2026-01-15'), (5, 1, 29.90, '2026-01-15');
 
+-- UPDATE cliente
+-- SET telefone = '193913919'
+-- WHERE id_cliente = 27;
 
-UPDATE cliente
-SET telefone = '193913919'
-WHERE id_cliente = 27;
+-- UPDATE produto SET PRECO = 1.00;
 
-UPDATE produto SET PRECO = 1.00;
+-- UPDATE CLIENTE TELEFONE = '90909090', CIDADE = 'CAMPINAS' WHERE ID_CLIENTE = 11;
 
-UPDATE CLIENTE TELEFONE = '90909090', CIDADE = 'CAMPINAS' WHERE ID_CLIENTE = 11;
+-- insert into pedido (data_pedido, status, valor_total, id_cliente) VALUES (NOW(), 'ABERTO', '0.00', 30);
+-- SET @pedido = LAST_INSERT_ID();
+-- SELECT @pedido;
 
-insert into pedido (data_pedido, status, valor_total, id_cliente) VALUES (NOW(), 'ABERTO', '0.00', 30);
-SET @pedido = LAST_INSERT_ID();
-SELECT @pedido;
+-- UPDATE produto SET preco = preco * 1.05 WHERE id_categoria = 1;
 
-UPDATE produto SET preco = preco * 1.05 WHERE id_categoria = 1;
+-- UPDATE produto
+-- SET PRECO = CASE 
+--   WHEN PRECO < 10 THEN PRECO * 1.10  
+--   ELSE  PRECO * 1.05
+-- END
+-- WHERE ATIVO = TRUE;
 
-UPDATE produto
-SET PRECO = CASE 
-  WHEN PRECO < 10 THEN PRECO * 1.10  
-  ELSE  PRECO * 1.05
-END
-WHERE ATIVO = TRUE;
+-- -- separacao da resenha e do trabalho 
 
--- separacao da resenha e do trabalho 
+-- DELETE FROM cliente WHERE id_cliente = 27;
 
-DELETE FROM cliente WHERE id_cliente = 27;
+-- UPDATE CLIENTE SET ATIVO = FALSE WHERE ID_CLIENTE = 10;
 
-UPDATE CLIENTE SET ATIVO = FALSE WHERE ID_CLIENTE = 10;
 
 
 
 
 
+-- AULA 9 
 
+-- TRANSAÇÕES - SEGURANÇA PARA DML
 
-
-
-
-
-
-USE SMARTCOFFEE_DML_LUIS;
-
-
--- DESAFIOS
-
--- PLAN A
-
-INSERT INTO cliente (nome, email, telefone, cidade, ativo) VALUES ('Roberto Loreal', 'robertoLo@email.com', '19998359331', 'Limeira', TRUE), ('Joao Pedro', 'JpFormiga@email.com', NULL, 'Campinas', FALSE); --1
-
-INSERT INTO categoria (nome) VALUES ('Especiais da Casa'); -- 2
-
-INSERT INTO produto (nome, preco, ativo, id_categoria) VALUES ('Picanha na chapa', '190.0', TRUE, 16), ('Hamburguer do Chefe', '49.0', TRUE, 16), ('Guacamole com doritos', '89.90', TRUE, 16); -- 3
-
-INSERT INTO cliente (nome, email, telefone, cidade, ativo) VALUES ('Manuel', 'manuel@email.com', NULL, 'Limeira', TRUE); -- 4
-
-INSERT INTO pedido (data_pedido, status, valor_total, id_cliente) VALUES ('2026-05-27', 'Finalizado', 19.90, 35); --5
-
-
--- 6
-SET @pedido = LAST_INSERT_ID();
-
-INSERT INTO item_pedido
-(id_pedido, id_produto, quantidade, preco_unitario, observacao)
-VALUES (@pedido, 8, 1, 89.90, 'Guacamole sem abacate'),
-(@pedido, 6, 1, 190.00, 'Picanha sem gordura');
-
-
-
-
--- PLAN B
-
--- 7
-UPDATE cliente
-SET telefone = '9090909090'
-WHERE id_cliente = 35;
-
--- 8
-
-UPDATE cliente
-SET telefone = '193913919', cidade = 'Sapucai Mirim'
-WHERE id_cliente = 35;
-
--- 9
-UPDATE produto SET preco = preco * 1.08 WHERE id_categoria = 16;
--- WHERE id_categoria = @Categoria_Especial;
-
-
--- 10
-UPDATE pedido SET status = 'PREPARANDO' where id_pedido = @pedido;
-
--- 11
-UPDATE pedido SET valor_total = 180.0 where id_pedido = @pedido;
-
--- JEITO  DO PROFESSOR
--- UPDATE PEDIDO SET VALOR_TOTAL = (SELECT NUM(QUANTIDADE *PRECO_UNITARIO) FROM ITEM_PEDIDO WHERE ID_PEDIDO=@PEDIDO_ATIVIDADE);
-
--- 12
-UPDATE produto SET ATIVO = FALSE WHERE id_produto = 4;
-
-
-
-
--- Parte C
-
--- 13
-INSERT INTO cliente (nome, email, telefone, cidade, ativo) VALUES ('TESTE', 'TESTE@email.com', '19998359331', 'teste', TRUE);
-DELETE FROM cliente WHERE id_cliente = 36;
-
--- 14
-DELETE FROM cliente WHERE id_cliente = 35;
--- ERRO QUE DEU: Error: Cannot delete or update a parent row: a foreign key constraint fails (smartcoffee_dml_luis.pedido, CONSTRAINT fk_pedido_cliente FOREIGN KEY (id_cliente) REFERENCES cliente (id_cliente))
-
--- 15 
--- Ele não permite apagar um cliente que possuí uma foreign key rodando, no caso a tabela cliente era a tabela "Pai" e a tabela pedido é a tabela "Filho", não é possível apagar a tabela "Pai" se a tabela "Filho"
--- estiver sendo utilizada.  
-
--- 16
-INSERT INTO categoria (nome) VALUES ('Teste');
-DELETE FROM categoria WHERE noem = 'Teste';
-
-
-
-
--- Parte D
-
--- 17
-INSERT INTO produto (nome, preco, ativo, id_categoria) VALUES ('Donut', '11.4', TRUE, 99);
--- Error: Cannot add or update a child row: a foreign key constraint fails (smartcoffee_dml_luis.produto, CONSTRAINT fk_produto_categoria FOREIGN KEY (id_categoria) REFERENCES categoria (id_categoria))
-
--- 18
-INSERT INTO cliente (nome, email, telefone, cidade, ativo) VALUES ('joaoAlberto', 'Rennan@email.com', '19998359331', 'teste', TRUE);
--- Error: Duplicate entry 'Rennan@email.com' for key 'cliente.email'
-
--- 19
-INSERT INTO pedido (data_pedido, status, valor_total, id_cliente) VALUES ('2026-10-01', 'ABERTO', 13.00, 99);
--- Error: Cannot add or update a child row: a foreign key constraint fails (smartcoffee_dml_luis.pedido, CONSTRAINT fk_pedido_cliente FOREIGN KEY (id_cliente) REFERENCES cliente (id_cliente))
-
--- 20
--- No primeiro erro, a restrição foi por não conseguir pegar uma categoria verdadeira, então a foreign key não funcionou
--- No segundo erro, a restrição foi por existir 2 emails iguais já cadastrados em cliente
--- No terceiro erro, é o mesmo erro que o primeiro, mas agora com um cliente que não existe
-
-
-
--- PARTE E 
-
--- 21
 START TRANSACTION;
 
+UPDATE produto set preco = preco * 2.80 WHERE id_categoria = 1;
+
+select id_produto, nome, preco from produto where id_categoria;
+
+ROLLBACK;
+
+COMMIT;
+
+START TRANSACTION;
+
+SELECT * from CLIENTE;
+UPDATE CLIENTE SET CIDADE = 'JOANOPOLIS' WHERE ID_CLIENTE = 21;
+
+COMMIT;
+
+ROLLBACK;
+
+
+-- procedimento de uma compra
+-- PASSO 1:
+
+INSERT INTO CLIENTE (NOME, EMAIL, TELEFONE, CIDADE, ATIVO) VALUES ('CARLOS SILVA','CARLOS.SILVA@EMAIL.COM', '1999999999', 'SANTOS', TRUE);
+
+SET @CLIENTE_COMPRA = LAST_INSERT_ID();
+
+-- passo 2:
+
+INSERT INTO PEDIDO (DATA_PEDIDO, STATUS, VALOR_TOTAL, ID_CLIENTE) VALUES (NOW(), 'ABERTO', 0.00, @CLIENTE_COMPRA);
+
+SET @PEDIDO_COMPRA = LAST_INSERT_ID();
+
+-- passo 3:
+INSERT INTO ITEM_PEDIDO (ID_PEDIDO, ID_PRODUTO, QUANTIDADE, PRECO_UNITARIO) VALUES (@PEDIDO_COMPRA,4,1,13.00), (@PEDIDO_COMPRA,9,1,9.00);
+
+-- PASSO 4:  ATUALIZANDO TOTAL E STATUS
+UPDATE pedido
+SET valor_total = 22.00,
+  STATUS = 'PREPARANDO'
+WHERE ID_PEDIDO = @PEDIDO_COMPRA;
+
+-- PASSO 5: REGISTRAR PAGAMENTO
+
+INSERT INTO PAGAMENTO (ID_PEDIDO, ID_FORMA_PAGAMENTO, VALOR, DATA_PAGAMENTO) VALUES (@PEDIDO_COMPRA, 2 ,22.00, NOW());
+
+-- PASSO 6: CONSULTAR PEDIDO E RESULTADO
+
+SELECT p.id_pedido,
+    c.nome AS Nome_Cliente,
+    p.STATUS AS Status_Pedido,
+    p.valor_total As Compra_Total
+FROM pedido p
+JOIN CLIENTE c ON c.id_cliente = p.id_cliente
+WHERE p.id_pedido = @pedido_compra;
+
+-- PASSO 7: RELATORIO
+SELECT NOME FROM CLIENTE WHERE ID_CLIENTE = @CLIENTE_COMPRA;
+
+SELECT NOME FROM CLIENTE WHERE ID_CLIENTE = 23;
+
+SELECT * FROM PEDIDO WHERE ID_PEDIDO = @PEDIDO_COMPRA;
