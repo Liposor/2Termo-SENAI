@@ -154,14 +154,19 @@ USE SMARTCOFFEE_DML_LUIS;
 -- PLAN A
 
 INSERT INTO cliente (nome, email, telefone, cidade, ativo) VALUES ('Roberto Loreal', 'robertoLo@email.com', '19998359331', 'Limeira', TRUE), ('Joao Pedro', 'JpFormiga@email.com', NULL, 'Campinas', FALSE); --1
+
 INSERT INTO categoria (nome) VALUES ('Especiais da Casa'); -- 2
+
 INSERT INTO produto (nome, preco, ativo, id_categoria) VALUES ('Picanha na chapa', '190.0', TRUE, 16), ('Hamburguer do Chefe', '49.0', TRUE, 16), ('Guacamole com doritos', '89.90', TRUE, 16); -- 3
+
 INSERT INTO cliente (nome, email, telefone, cidade, ativo) VALUES ('Manuel', 'manuel@email.com', NULL, 'Limeira', TRUE); -- 4
+
 INSERT INTO pedido (data_pedido, status, valor_total, id_cliente) VALUES ('2026-05-27', 'Finalizado', 19.90, 35); --5
 
 
 -- 6
 SET @pedido = LAST_INSERT_ID();
+
 INSERT INTO item_pedido
 (id_pedido, id_produto, quantidade, preco_unitario, observacao)
 VALUES (@pedido, 8, 1, 89.90, 'Guacamole sem abacate'),
@@ -172,20 +177,47 @@ VALUES (@pedido, 8, 1, 89.90, 'Guacamole sem abacate'),
 
 -- PLAN B
 
--- 1
+-- 7
 UPDATE cliente
 SET telefone = '9090909090'
 WHERE id_cliente = 35;
 
--- 2
+-- 8
 
 UPDATE cliente
 SET telefone = '193913919', cidade = 'Sapucai Mirim'
 WHERE id_cliente = 35;
 
--- 3
+-- 9
 UPDATE produto SET preco = preco * 1.05 WHERE id_categoria = 16;
 
 
--- 4]
-UPDATE produtos SET status = 'PREPARANDO' where 
+-- 10
+UPDATE pedido SET status = 'PREPARANDO' where id_pedido = @pedido;
+
+-- 11
+UPDATE pedido SET valor_total = 180.0 where id_pedido = @pedido;
+
+-- 12
+UPDATE produto SET ATIVO = FALSE WHERE id_produto = 4;
+
+
+
+
+-- Parte C
+
+-- 13
+INSERT INTO cliente (nome, email, telefone, cidade, ativo) VALUES ('TESTE', 'TESTE@email.com', '19998359331', 'teste', TRUE);
+DELETE FROM cliente WHERE id_cliente = 36;
+
+-- 14
+DELETE FROM cliente WHERE id_cliente = 35;
+-- ERRO QUE DEU: Error: Cannot delete or update a parent row: a foreign key constraint fails (smartcoffee_dml_luis.pedido, CONSTRAINT fk_pedido_cliente FOREIGN KEY (id_cliente) REFERENCES cliente (id_cliente))
+
+-- 15 
+-- Ele não permite apagar um cliente que possuí uma foreign key rodando, no caso a tabela cliente era a tabela "Pai" e a tabela pedido é a tabela "Filho", não é possível apagar a tabela "Pai" se a tabela "Filho"
+-- estiver sendo utilizada.  
+
+-- 16
+INSERT INTO categoria (nome) VALUES ('Teste');
+DELETE FROM categoria WHERE id_categoria = 17;
