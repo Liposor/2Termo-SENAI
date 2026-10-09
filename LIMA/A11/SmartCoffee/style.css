@@ -1,0 +1,258 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #FFFFFF;
+  color: #000000;
+}
+
+.cabecalho {
+  background-color: #572813;
+  padding: 20px 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.logo,
+.rodape h2 {
+  margin: 0;
+  color: #BA9D8A;
+}
+
+.logo span,
+.rodape span {
+  color: #FFFFFF;
+}
+
+@media (max-width: 1980px) {
+.menu {
+  display: grid;
+  flex-wrap: wrap;
+  justify-content: center;
+  grid-template-columns: repeat(5, minmax(120px, 1fr));
+  gap: 20px;
+}
+}
+
+@media (max-width: 900px) {
+  .menu {
+      display: grid;
+      flex-wrap: wrap;
+      justify-content: center;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+}
+
+.menu a {
+  color: #BA9D8A;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.menu a:hover {
+  color: #FFFFFF;
+}
+
+.banner {
+  background-color: #FFFFFF;
+  padding: 140px 6%;
+}
+
+.banner-conteudo {
+  max-width: 650px;
+}
+
+.banner h2 {
+  margin: 0;
+  color: #572813;
+  font-size: 64px;
+}
+
+.banner h3 {
+  font-size: 26px;
+  font-weight: normal;
+}
+
+.botao {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 15px 28px;
+  border: 2px solid #572813;
+  border-radius: 30px;
+  background-color: #572813;
+  color: #FFFFFF;
+  font-size: 18px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.botao:hover {
+  background-color: #BA9D8A;
+  border-color: #BA9D8A;
+  color: #000000;
+}
+
+.secao {
+  padding: 70px 6%;
+}
+
+.sobre {
+  background-color: #BA9D8A;
+}
+
+.sobre-conteudo {
+  max-width: 800px;
+}
+
+.sobre h2,
+.produtos > h2,
+.ambiente h2,
+.contato h2 {
+  color: #572813;
+  font-size: 42px;
+}
+
+.sobre h3,
+.ambiente h3,
+.contato h3 {
+  font-weight: normal;
+  line-height: 1.6;
+}
+
+.botao-claro {
+  background-color: #FFFFFF;
+  border-color: #FFFFFF;
+  color: #572813;
+}
+
+.lista-cafes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.card-cafe {
+  padding: 25px;
+  background-color: #BA9D8A;
+  border-radius: 15px;
+}
+
+.card-cafe h3 {
+  color: #572813;
+  font-size: 24px;
+}
+
+.card-cafe h2 {
+  color: #572813;
+}
+
+.ambiente {
+  background-color: #572813;
+  color: #FFFFFF;
+}
+
+.ambiente h2 {
+  color: #BA9D8A;
+}
+
+.ambiente .botao {
+  margin-top: 10px;
+}
+
+.contato {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.formulario input,
+.formulario textarea {
+  padding: 12px;
+  border: 1px solid #BA9D8A;
+  border-radius: 6px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.formulario .botao {
+  align-self: flex-start;
+}
+
+.rodape {
+  background-color: #572813;
+  padding: 30px 6%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  color: #FFFFFF;
+}
+
+.rodape p {
+  width: 100%;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .cabecalho,
+  .rodape {
+    flex-direction: column;
+  }
+
+  .banner {
+    padding: 90px 6%;
+  }
+
+  .banner h2 {
+    font-size: 48px;
+  }
+
+  .contato {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .cabecalho,
+  .secao,
+  .rodape {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .menu {
+    gap: 12px;
+  }
+
+  .menu a {
+    font-size: 16px;
+  }
+
+  .banner {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+
+  .banner h2 {
+    font-size: 40px;
+  }
+
+  .banner h3 {
+    font-size: 22px;
+  }
+
+  .sobre h2,
+  .produtos > h2,
+  .ambiente h2,
+  .contato h2 {
+    font-size: 34px;
+  }
+}

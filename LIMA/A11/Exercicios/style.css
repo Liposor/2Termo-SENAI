@@ -110,3 +110,52 @@ CELULAR
 
   Diferença: O autofit apenas substituiu o restante, permitindo em cada tamanho se ajustar automáticamente.
 } */
+
+/* Grande */
+
+@media (max-width: 1920px) {
+  .senai-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+}
+
+/* Media */
+
+@media (max-width: 800px) {
+  .senai-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+/* Pequena */
+
+@media (max-width: 500px) {
+  .senai-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 24px;
+  }
+}
+
+
+
+/*
+
+SENAI: SEGUNDA SOLUÇÃO
+
+@media (max-width: 1920px) {
+  .senai-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,
+      minmax(220px, 1fr));
+    gap: 24px;
+  }
+}
+ */
+
+/* A solução que possui menos regras é a segunda, já que não temos que fazer algo tão extenso */
+/* Eu pegaria a segunda opção já que ele é menor e mais versátil para todas as telas */
