@@ -1,0 +1,112 @@
+/* 
+1
+
+.ex-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px
+} */
+
+/* 
+
+2
+.ex-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px
+} */
+
+
+/*
+
+3
+
+O 2FR OCUPA MAIS ESPAÇO QUE O 1FR.
+
+.ex-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  gap: 10px
+}
+
+.ex-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px
+} */
+
+
+/*
+
+4
+
+.ex-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px
+} */
+
+/* 
+
+5
+
+DESKTOP
+
+@media (max-width: 1080px) {
+  .ex-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+TABLET
+
+@media (max-width: 800px) {
+  .ex-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+CELULAR
+
+@media (max-width: 800px) {
+  .ex-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+} */
+
+
+/* 
+
+6
+
+DESKTOP
+
+@media (max-width: 1080px) {
+  .ex-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+}
+
+TABLET
+
+@media (max-width: 800px) {
+  .ex-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+}
+
+CELULAR
+
+@media (max-width: 800px) {
+  .ex-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));  
+  }
+
+  Diferença: O autofit apenas substituiu o restante, permitindo em cada tamanho se ajustar automáticamente.
+} */
