@@ -1,3 +1,4 @@
+-- Active: 1789646752736@@127.0.0.1@3306@smartcoffee_dml_luis
 -- BANCO DE DADOS - SMARTCOFFEE - DML 
 
 DROP DATABASE IF EXISTS SMARTCOFFEE_DML_LUIS;
@@ -45,7 +46,7 @@ CREATE TABLE pedido (
   status_pedido ENUM('ABERTO', 'PREPARANDO', 'FINALIZANDO', 'CANCELADO') NOT NULL,
   valor_total DECIMAL(10,2) NOT NULL DEFAULT 0.00,
   id_cliente INT NOT NULL,
-  CONSTRAINT fk_pedido_cliente FOREIGN KEY (id_cliente) REFERENCES cliente (id_cliente)
+  CONSTRAINT fk_pedido_cliente FOREIGN KEY (id_cliente) REFERENCES cliente (id_cliente) 
 );
 
 
