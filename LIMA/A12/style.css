@@ -2,12 +2,12 @@
 
 :root {
   /* Paletas de Cores */
-  --espresso: brown;
+  --espresso: White;
   --cafe: black;
   --texto: blue;
   --rosa: pink;
   --fonte: "roboto", sans-serif;
-  --gray: gray;
+  --gray: purple;
   --branco: white;
 
   /* :root representa o elemento raiz do documento */
@@ -33,7 +33,7 @@ body {
   margin: 0;
   font-family: var(--fonte);
   line-height: 1.6;
-  background-color: rgb(131, 84, 23);
+  background-color: green;
 }
 
 img {
@@ -69,7 +69,7 @@ h3, p {
 }
 
 .menu a {
-  color: var(--cafe);
+  color: var(--branco);
   text-decoration: none;
   font-weight: 500;
 }
@@ -88,14 +88,14 @@ menu a:focus-visible {
   margin-top: 16px;
   padding: 12px 24px;
   background-color: var(--gray);
-  color: var(--espresso);
+  color: var(--branco);
   text-decoration: none;
   font-weight: 600;
   border-radius: 16px;
 }
 
 .menu-id:hover {
-  background-color: brown;
+  background-color: rgb(192, 8, 192);
 
 }
 
@@ -122,7 +122,7 @@ menu a:focus-visible {
   box-shadow: 0.2s ease;
 }
 
-.imagens:hover {
+.imagens img:hover {
   transform: translateY(-4px);
   box-shadow: 0 12px 38px rgba(43, 23, 13, 0.12);
 }
