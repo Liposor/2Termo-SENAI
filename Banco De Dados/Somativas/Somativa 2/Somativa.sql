@@ -132,22 +132,43 @@ SELECT E.id_emprestimo, U.id_usuario, E.id_livro, E.data_prevista, E.status_empr
 SELECT status_emprestimo, COUNT(*) AS Quantidade FROM Emprestimo GROUP BY status_emprestimo;
 
 -- 19
-<<<<<<< HEAD
 SELECT U.id_usuario, U.nome, COUNT(E.id_emprestimo) AS Quantidade 
 FROM Usuario AS U 
 INNER JOIN Emprestimo AS E ON E.id_usuario = U.id_usuario 
 GROUP BY U.id_usuario, U.nome ORDER BY Quantidade DESC;
 
 -- 20
-SELECT U.id_usuario, U.nome, COUNT(E.id_emprestimo) 
-AS Quantidade FROM Usuario AS U 
+SELECT U.id_usuario, U.nome, COUNT(E.id_emprestimo) AS Quantidade
+FROM Usuario AS U 
 LEFT JOIN Emprestimo AS E ON E.id_usuario = U.id_usuario 
 GROUP BY U.id_usuario, U.nome;
 
 --21 
-=======
-SELECT U.id_usuario, U.nome, COUNT(E.id_emprestimo) AS Quantidade FROM Usuario AS U INNER JOIN Emprestimo AS E ON E.id_usuario = U.id_usuario GROUP BY U.id_usuario, U.nome ORDER BY Quantidade DESC;
+START TRANSACTION;
 
--- 20
-SELECT U.id_usuario, U.nome, COUNT(E.id_emprestimo) AS Quantidade FROM Usuario AS U LEFT JOIN Emprestimo AS E ON E.id_usuario = U.id_usuario GROUP BY U.id_usuario, U.nome;
->>>>>>> 1d4accfcac307050204adaa0fe60a2fee52a3a98
+INSERT INTO Emprestimo (data_prevista, data_devolucao, status_emprestimo, id_usuario, id_livro) VALUES 
+('20-02-10', '2026-02-10', 'Desativo', 4, 6)
+
+UPDATE livro
+SET quantidade_disponivel = 1
+WHERE id_livro = 6;
+
+SELECT * FROM livro;
+
+COMMIT;
+
+-- 22
+START TRANSACTION;
+
+UPDATE livro
+SET quantidade_disponivel = 10000
+WHERE id_livro = 5;
+
+SELECT * FROM livro;
+
+ROLLBACK;
+
+SELECT * FROM livro;
+
+-- 23
+
