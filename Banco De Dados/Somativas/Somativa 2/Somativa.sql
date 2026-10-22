@@ -132,7 +132,15 @@ SELECT E.id_emprestimo, U.id_usuario, E.id_livro, E.data_prevista, E.status_empr
 SELECT status_emprestimo, COUNT(*) AS Quantidade FROM Emprestimo GROUP BY status_emprestimo;
 
 -- 19
+SELECT U.id_usuario, U.nome, COUNT(E.id_emprestimo) AS Quantidade 
+FROM Usuario AS U 
+INNER JOIN Emprestimo AS E ON E.id_usuario = U.id_usuario 
+GROUP BY U.id_usuario, U.nome ORDER BY Quantidade DESC;
 
+-- 20
+SELECT U.id_usuario, U.nome, COUNT(E.id_emprestimo) 
+AS Quantidade FROM Usuario AS U 
+LEFT JOIN Emprestimo AS E ON E.id_usuario = U.id_usuario 
+GROUP BY U.id_usuario, U.nome;
 
-
-
+--21 
