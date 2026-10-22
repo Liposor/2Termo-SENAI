@@ -171,4 +171,65 @@ ROLLBACK;
 SELECT * FROM livro;
 
 -- 23
+START TRANSACTION;
 
+UPDATE livro
+set quantidade_disponivel = 180
+WHERE id_livro = 3;
+
+SELECT * FROM livro;
+
+SAVEPOINT savelivros;
+
+UPDATE livro
+set quantidade_disponivel = 300
+WHERE id_livro = 3;
+
+SELECT * FROM livro;
+
+ROLLBACK TO SAVEPOINT savelivros;
+
+SELECT * FROM livro;
+
+COMMIT;
+
+-- 24
+START TRANSACTION
+
+SELECT * FROM emprestimo;
+
+UPDATE emprestimo
+SET status_emprestimo = 'Desativo',
+data_devolucao = '2026-10-22'
+WHERE id_emprestimo = 3;
+
+UPDATE livro 
+SET quantidade_disponivel = quantidade_disponivel + 1
+WHERE id_livro = 1;
+
+COMMIT;
+
+SELECT * FROM emprestimo;
+
+-- 25
+-- Cadastrar dois usuários com o mesmo e-mail.
+-- Resposta: Deve possuir uma regra de aplicação para impedir de cadastrar dois email iguais (Unique)
+
+
+-- Cadastrar dois livros com o mesmo ISBN.
+-- Resposta: Não deve ser possível efetuar, já que não pode pussir dois livros com o mesmo ISBN (Unique)
+
+-- Permitir quantidade disponível negativa.
+-- resposta: Não deve ser possível efetuar isto, podemos utilizar uma regra de aplicação para impedir (CHECK)
+
+-- Criar empréstimo para usuário inexistente.
+-- resposta: Não é possível porque ele precisa se Referenciar a um ID de Usuário, e se não existir o ID não tem como.
+
+-- Excluir livro com histórico de empréstimos.
+-- resposta: Não é possível porque ele está sendo utilizado e referenciado por empréstimos, a FK dara erro. (Constraint)
+
+-- Gravar empréstimo e falhar na redução do estoque.
+-- resposta: É uma transação porque você grava, verifica testa e aprova ou rejeita com Rollback, Commit, Start Transaction ou Save Point;
+
+-- Emprestar livro cuja quantidade disponível seja zero.
+-- resposta: Não deve ser possível deve existir uma Regra da aplicação que não permita, porque não deve ser possível emprestar um livro que não está disponível.
