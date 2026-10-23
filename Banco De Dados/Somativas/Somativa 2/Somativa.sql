@@ -220,7 +220,7 @@ SELECT * FROM emprestimo;
 -- Resposta: Não deve ser possível efetuar, já que não pode pussir dois livros com o mesmo ISBN (Unique)
 
 -- Permitir quantidade disponível negativa.
--- resposta: Não deve ser possível efetuar isto, podemos utilizar uma regra de aplicação para impedir (CHECK)
+-- resposta: Não deve ser possível efetuar isto, podemos utilizar uma regra de aplicação para impedir ( )
 
 -- Criar empréstimo para usuário inexistente.
 -- resposta: Não é possível porque ele precisa se Referenciar a um ID de Usuário, e se não existir o ID não tem como.
