@@ -171,7 +171,7 @@ section {
   padding: 90px 6.25% 82px;
 }
 
-.Secao-90 > h1 {
+.Secao-90  h1 {
   margin: 0 0 34px;
   font-size: clamp(2rem, 4vw, 58px);
   font-weight: 900;
@@ -180,14 +180,14 @@ section {
   max-width: 1000px;
 }
 
-.Secao-90 > h3 {
+.Secao-90  h3 {
   margin: 0 0 32px;
   font-size: 18px;
   letter-spacing: 4px;
   color: var(--Ciano);
 }
 
-.Secao-90 > p {
+.Secao-90  p {
   margin: 0 0 46px;
   color: var(--texto);
   font-size: 22px;
@@ -265,3 +265,26 @@ section {
   font-size: 22px;
   line-height: 1.5;
 }
+
+
+
+.tres-colunas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px;
+}
+
+.resolve-problema h3 {
+    text-align: justify;
+  margin-top: 5%;
+
+  color: var(--amarelo);
+}
+
+.resolve-problema h1 {
+  text-align: justify;
+    margin-top: 5%;
+  font-size: 35px;
+  color: white;
+}
+
