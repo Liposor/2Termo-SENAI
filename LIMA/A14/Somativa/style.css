@@ -1,0 +1,227 @@
+:root {
+  --Header_Color: #090a16;
+  --Rosa: #fb4780;
+  --Ciano: #24c6eb;
+  --amarelo: #fdda5c;
+  --Header_Letras: #aeb1c0;
+  --Secao_Fundo: #0c0d1a;
+  --texto: #aeb1c0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+header {
+  position: sticky;
+    top: 0;
+    z-index: 10;
+    min-height: 82px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    padding: 16px clamp(24px, 6ww, 92px);
+    background: var(--Header_Color);
+    backdrop-filter: blur(18px);
+    color: var(--Header_Letras);
+}
+
+header h1 {
+  color: white;
+  margin-left: 50px;
+}
+
+header span {
+  color: var(--Rosa);
+  margin-left: 20px;
+}
+
+ul {
+  margin: 40px;
+  padding: 0;
+  list-style: none;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.menu a {
+  color: var(--Header_Letras);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2 ease, background-color 0.2s ease;
+}
+
+.menu a:hover,
+.menu a:focus-visible {
+  color: white;
+  cursor: pointer;
+  
+}
+
+
+.menu-destaque a {
+  display: inline-block;
+  padding: 10px 30px;
+  border: 1px solid var(--Rosa);
+  border-radius: 100px;
+  color: var(--texto);
+}
+
+.menu-destaque a:hover,
+.menu-destaque a:focus-visible {
+  background: var(--Rosa);
+  color: white;
+}
+
+
+
+section {
+  margin: 0;
+}
+
+.Secao-80 {
+  background: linear-gradient(170deg, #0b0b18, #1a1131);
+  margin: 0;
+  padding: 15px;
+  padding-left: 1.5%;
+  color: white;
+
+}
+
+.Secao-80 h1 {
+  margin-top: -15px;
+  font-size: 100px;
+  width: 800px;
+}
+
+.Secao-80 h3 {
+  font-size: 20px;
+  letter-spacing: 5px;
+  color: var(--Ciano);
+  margin-left: 10px;
+
+}
+
+.Secao-80 p {
+  margin-top: -40px;
+  color: var(--texto);
+  font-size: 25px;
+  width: 800px;
+  letter-spacing: 1.2px;
+}
+
+.Secao-80 button {
+  transition: 0.3s;
+  background-color: var(--Rosa);
+  border-radius: 100px;
+  padding: 20px 40px;
+  color: white;
+  border: 1px solid var(--Rosa);
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.Secao-80 button:hover {
+  transition: 0.3s;
+  transform: scale(1.07);
+}
+
+.Secao-80 img {
+  border: 1px solid #25273b;
+  background-color: #181930;
+  width: 600px;
+  height: 500px;
+  position: absolute;
+  display: flex;
+  margin-top: -25%;
+  margin-left: 57%;
+  border-radius: 60px;
+}
+
+
+
+
+
+
+
+.Secao-90 {
+  background: linear-gradient(340deg, #0b0b18, #1a1131);
+  margin: 0;
+  padding: 15px;
+  padding-left: 2.5%;
+  color: white;
+
+}
+
+.Secao-90 h1 {
+  margin-top: -15px;
+  font-size: 60px;
+  width: 1000px;
+}
+
+.Secao-90 h3 {
+  font-size: 20px;
+  letter-spacing: 5px;
+  color: var(--Ciano);
+  margin-left: 10px;
+
+}
+
+.Secao-90 p {
+  margin-top: -40px;
+  color: var(--texto);
+  font-size: 20px;
+  width: 800px;
+  letter-spacing: 1.2px;
+}
+
+.dois-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+
+}
+
+.CARD {
+  margin: 20px;
+  background-color: #181930 ;
+  width: 50%;
+  height: 450px;
+  padding: 10px;
+  border-radius: 30px;
+  border: 0.3px solid #25273b;
+}
+
+.CARD H1 {
+  font-size: 30PX;
+  margin-left: 2%;
+}
+
+.CARD H3 {
+  color: var(--amarelo);
+    margin-left: 2%;
+}
+
+.CARD IMG {
+  margin: 2%;
+  height: 60%;
+  width: 96%;
+  border-radius: 30px;
+  background-color: var(--amarelo);
+}
