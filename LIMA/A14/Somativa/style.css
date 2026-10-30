@@ -290,19 +290,19 @@ section {
 
 
 
-main > section:last-child {
+.Secao-Passado {
   padding: 90px 6.25%;
   background-color: #0e1020;
 }
 
-main > section:last-child h3 {
+.Secao-Passado h3 {
   margin: 0 0 32px;
   color: var(--Ciano);
   font-size: 18px;
   letter-spacing: 4px;
 }
 
-main > section:last-child h1 {
+.Secao-Passado h1 {
   margin: 0 0 60px;
   max-width: 800px;
   font-size: clamp(2rem, 4vw, 58px);
@@ -311,15 +311,15 @@ main > section:last-child h1 {
   letter-spacing: -2px;
 }
 
-main > section:last-child article {
+.CARD2 {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 2fr));
   align-items: center;
   column-gap: clamp(40px, 9vw, 130px);
   row-gap: 12px;
 }
 
-main > section:last-child img {
+.Secao-Passado img {
   display: block;
   grid-row: span 3;
   width: 100%;
@@ -329,17 +329,83 @@ main > section:last-child img {
   background-color: var(--amarelo);
 }
 
-main > section:last-child article h1 {
+.CARD2 h1 {
   margin: 0;
+  padding-top: 20px;
   font-size: 30px;
   letter-spacing: 0;
 }
 
-main > section:last-child article h3 {
+.CARD2 h3 {
+  padding-top: 20px;
   margin: 0;
 }
 
-main > section:last-child article h1:first-of-type {
+.CARD2 h1 span {
   font-size: 46px;
   color: var(--Rosa);
+}
+
+.resolvido-card2 {
+  display: block;
+}
+
+.Secao-final {
+  padding: 90px 6.25%;
+  text-align: center;
+  background: linear-gradient(90deg, #6D4AFF,  #FF3D81);
+}
+
+.Secao-final h3 {
+  margin: 0 0 32px;
+  color: var(--amarelo);
+  font-size: 18px;
+  letter-spacing: 4px;
+}
+
+.Secao-final h1 {
+  margin: 0 0 24px;
+  font-size: clamp(2rem, 4vw, 58px);
+  font-weight: 900;
+  letter-spacing: -2px;
+}
+
+.Secao-final p {
+  margin: 0;
+  color: white;
+  font-size: 22px;
+}
+
+footer {
+  background-color: var(--Header_Color);
+  color: white;
+}
+
+footer {
+  top: 0;
+  z-index: 10;
+  min-height: 92px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 28px 6.25%;
+  background: var(--Header_Color);
+  border-bottom: 1px solid #25273b;
+  color: var(--Header_Letras);
+}
+
+footer h1 {
+  color: #fff7e6;
+  margin: 0;
+  font-size: 26px;
+  font-weight: 900;
+}
+
+footer span {
+  color: var(--Rosa);
+}
+
+.memorial {
+  text-align: center;
 }
