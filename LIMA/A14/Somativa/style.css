@@ -1,16 +1,18 @@
 :root {
   --Header_Color: #090a16;
-  --Rosa: #fb4780;
-  --Ciano: #24c6eb;
-  --amarelo: #fdda5c;
-  --Header_Letras: #aeb1c0;
-  --Secao_Fundo: #0c0d1a;
-  --texto: #aeb1c0;
+  --Rosa: #ff3d81;
+  --Ciano: #18d9ff;
+  --amarelo: #ffd84d;
+  --Header_Letras: #c7cadb;
+  --Secao_Fundo: #101225;
+  --texto: #c7cadb;
 }
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
+  margin: 0;
+  background-color: var(--Header_Color);
+  color: #fff7e6;
 }
 
 
@@ -24,54 +26,56 @@ html {
 
 header {
   position: sticky;
-    top: 0;
-    z-index: 10;
-    min-height: 82px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 32px;
-    padding: 16px clamp(24px, 6ww, 92px);
-    background: var(--Header_Color);
-    backdrop-filter: blur(18px);
-    color: var(--Header_Letras);
+  top: 0;
+  z-index: 10;
+  min-height: 92px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 28px 6.25%;
+  background: var(--Header_Color);
+  border-bottom: 1px solid #25273b;
+  color: var(--Header_Letras);
 }
 
 header h1 {
-  color: white;
-  margin-left: 50px;
+  color: #fff7e6;
+  margin: 0;
+  font-size: 26px;
+  font-weight: 900;
 }
 
 header span {
   color: var(--Rosa);
-  margin-left: 20px;
 }
 
 ul {
-  margin: 40px;
+  margin: 0;
   padding: 0;
   list-style: none;
 }
 
 .menu {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 28px;
 }
 
 .menu a {
   color: var(--Header_Letras);
-  font-size: 0.9rem;
-  font-weight: 600;
+  font-size: 17px;
+  font-weight: 700;
   text-decoration: none;
-  transition: color 0.2 ease, background-color 0.2s ease;
+  transition: color 0.2s ease, background-color 0.2s ease;
 }
 
 .menu a:hover,
 .menu a:focus-visible {
   color: white;
   cursor: pointer;
-  
 }
 
 
@@ -80,7 +84,7 @@ ul {
   padding: 10px 30px;
   border: 1px solid var(--Rosa);
   border-radius: 100px;
-  color: var(--texto);
+  color: #fff7e6;
 }
 
 .menu-destaque a:hover,
@@ -96,132 +100,168 @@ section {
 }
 
 .Secao-80 {
-  background: linear-gradient(170deg, #0b0b18, #1a1131);
-  margin: 0;
-  padding: 15px;
-  padding-left: 1.5%;
-  color: white;
+  background: linear-gradient(135deg, #090a16, #101225, #1a1234);
+  min-height: 710px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 40px;
+  padding: 72px 6.25% 102px;
+}
 
+.Secao-80-texto {
+  flex: 1 1 620px;
+  max-width: 100%;
 }
 
 .Secao-80 h1 {
-  margin-top: -15px;
-  font-size: 100px;
-  width: 800px;
+  margin: 0 0 42px;
+  font-size: clamp(2rem, 5.7vw, 82px);
+  font-weight: 900;
+  line-height: 1.01;
+  max-width: 720px;
 }
 
 .Secao-80 h3 {
-  font-size: 20px;
-  letter-spacing: 5px;
+  margin: 0 0 32px;
+  font-size: 18px;
+  letter-spacing: 4px;
   color: var(--Ciano);
-  margin-left: 10px;
-
 }
 
-.Secao-80 p {
-  margin-top: -40px;
+.Secao-80-texto p {
+  margin: 0 0 42px;
   color: var(--texto);
-  font-size: 25px;
-  width: 800px;
-  letter-spacing: 1.2px;
+  font-size: 22px;
+  line-height: 1.5;
+  max-width: 650px;
 }
 
-.Secao-80 button {
-  transition: 0.3s;
+.botao {
+  display: inline-block;
+  transition: transform 0.3s;
   background-color: var(--Rosa);
   border-radius: 100px;
   padding: 20px 40px;
-  color: white;
-  border: 1px solid var(--Rosa);
-  font-size: 20px;
-  cursor: pointer;
+  color: #fff7e6;
+  font-size: 17px;
+  font-weight: 700;
+  text-decoration: none;
 }
 
-.Secao-80 button:hover {
-  transition: 0.3s;
+.botao:hover {
   transform: scale(1.07);
 }
 
-.Secao-80 img {
+.Secao-80-imagem {
+  position: relative;
+  flex: 1 1 440px;
+  max-width: 500px;
+  width: 100%;
+  aspect-ratio: 500 / 535;
   border: 1px solid #25273b;
-  background-color: #181930;
-  width: 600px;
-  height: 500px;
-  position: absolute;
-  display: flex;
-  margin-top: -25%;
-  margin-left: 57%;
-  border-radius: 60px;
+  background-color: #171a31;
+  border-radius: 36px;
 }
-
-
-
-
 
 
 
 .Secao-90 {
-  background: linear-gradient(340deg, #0b0b18, #1a1131);
-  margin: 0;
-  padding: 15px;
-  padding-left: 2.5%;
-  color: white;
-
+  background: var(--Secao_Fundo);
+  padding: 90px 6.25% 82px;
 }
 
-.Secao-90 h1 {
-  margin-top: -15px;
-  font-size: 60px;
-  width: 1000px;
+.Secao-90 > h1 {
+  margin: 0 0 34px;
+  font-size: clamp(2rem, 4vw, 58px);
+  font-weight: 900;
+  line-height: 1.12;
+  letter-spacing: -2px;
+  max-width: 1000px;
 }
 
-.Secao-90 h3 {
-  font-size: 20px;
-  letter-spacing: 5px;
+.Secao-90 > h3 {
+  margin: 0 0 32px;
+  font-size: 18px;
+  letter-spacing: 4px;
   color: var(--Ciano);
-  margin-left: 10px;
-
 }
 
-.Secao-90 p {
-  margin-top: -40px;
+.Secao-90 > p {
+  margin: 0 0 46px;
   color: var(--texto);
-  font-size: 20px;
-  width: 800px;
-  letter-spacing: 1.2px;
+  font-size: 22px;
+  line-height: 1.5;
+  max-width: 720px;
 }
 
 .dois-card {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 100px;
-
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px;
 }
 
 .CARD {
-  margin: 20px;
-  background-color: #181930 ;
-  width: 50%;
-  height: 450px;
-  padding: 10px;
-  border-radius: 30px;
-  border: 0.3px solid #25273b;
+  background-color: #171a31;
+  min-height: 460px;
+  padding: 17px;
+  border-radius: 24px;
+  border: 1px solid #25273b;
 }
 
-.CARD H1 {
-  font-size: 30PX;
-  margin-left: 2%;
+.CARD h1 {
+  font-size: 30px;
+  margin: 0 16px 40px;
+  font-weight: 900;
 }
 
-.CARD H3 {
+.CARD h3 {
   color: var(--amarelo);
-    margin-left: 2%;
+  margin: 48px 16px 32px;
+  font-size: 18px;
+  letter-spacing: 4px;
 }
 
-.CARD IMG {
-  margin: 2%;
-  height: 60%;
-  width: 96%;
-  border-radius: 30px;
-  background-color: var(--amarelo);
+.CARD-imagem {
+  position: relative;
+  height: 255px;
+  width: 100%;
+  border-radius: 18px;
+}
+
+.imagem-roxa {
+  background-color: #6d4aff;
+}
+
+.imagem-rosa {
+  background-color: var(--Rosa);
+}
+
+
+
+.Secao-herois {
+  padding: 90px 6.25%;
+  text-align: center;
+  background-color: var(--Header_Color);
+}
+
+.Secao-herois h3 {
+  margin: 0 0 32px;
+  color: var(--Ciano);
+  font-size: 18px;
+  letter-spacing: 4px;
+}
+
+.Secao-herois h1 {
+  margin: 0 0 24px;
+  font-size: clamp(2rem, 4vw, 58px);
+  font-weight: 900;
+  letter-spacing: -2px;
+}
+
+.Secao-herois p {
+  margin: 0;
+  color: var(--texto);
+  font-size: 22px;
+  line-height: 1.5;
 }
