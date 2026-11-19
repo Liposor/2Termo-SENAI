@@ -1,0 +1,256 @@
+/* TODAS AS CORES FORAM PEGAS DA SOMATIVA ANTERIOR ENTREGADA PELO PROFESSOR. */
+
+
+:root {
+  --Header_Color: #090a16;
+  --Rosa: #ff3d81;
+  --Ciano: #18d9ff;
+  --amarelo: #ffd84d;
+  --Header_Letras: #c7cadb;
+  --Secao_Fundo: #101225;
+  --texto: white;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background-color: (white);
+  color: #fff7e6;
+  padding: 60px;
+}
+
+main {
+
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  min-height: 92px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 28px 6.25%;
+  background: linear-gradient(145deg, #090a16, #ff3d81);
+  border-bottom: 1px solid #25273b;
+  color: white;
+  border: 5px solid black;
+
+}
+
+header h1 {
+  font-size: 50px;
+  /* padding-left: 25%; */
+}
+
+header span {
+  color: var(--Rosa);
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 28px;
+}
+
+.menu a {
+  color: white;
+  font-size: 17px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.2s ease, background-color 0.2s ease;
+
+}
+
+
+
+.menu a:hover,
+.menu a:focus-visible {
+
+  color: rgb(143, 143, 143);
+  cursor: pointer;
+}
+
+.S1-Tech {
+  margin-top: 20px;
+    background: linear-gradient(135deg, #090a16, #101225, #1a1234);
+      min-height: 710px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 40px;
+      padding: 72px 6.25% 102px;
+        border: 5px solid black;
+}
+
+
+
+.S1-Tech-2 h2 {
+  margin: 0 0 34px;
+  font-size: clamp(2rem, 4vw, 58px);
+  font-weight: 900;
+  line-height: 1.12;
+  letter-spacing: -2px;
+  max-width: 1000px;
+}
+
+.S1-Tech-2 p {
+  margin: 0 0 46px;
+  color: var(--texto);
+  font-size: 22px;
+  line-height: 1.5;
+  max-width: 720px;
+}
+
+.S1-Tech-imagem {
+  position: relative;
+  flex: 1 1 440px;
+  max-width: 500px;
+  width: 100%;
+  aspect-ratio: 500 / 535;
+  border: 1px solid #25273b;
+  background-color: #171a31;
+  border-radius: 36px;
+  
+}
+
+.botao {
+  display: inline-block;
+  transition: transform 0.3s;
+  background-color: var(--Rosa);
+  border-radius: 10px;
+  padding: 20px 40px;
+  color: #fff7e6;
+  font-size: 17px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.S2-Tech {
+    margin-top: 20px;
+      background: linear-gradient(70deg, #090a16, #101225, #1a1234);
+  padding: 90px 6.25%;
+    text-align: center;
+      border: 5px solid black;
+}
+
+main {
+  background-color: white;
+}
+
+
+
+
+
+.GRID-Card {
+    padding-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+
+.CARD {
+  background-color: #171a31;
+  min-height: 460px;
+  padding: 17px;
+  border-radius: 24px;
+  border: 1px solid #25273b;
+}
+
+.CARD h3 {
+  font-size: 20px;
+  margin: 0 16px 40px;
+  font-weight: 900;
+}
+
+.CARD2 {
+  background-color: #171a31;
+  min-height: 200px;
+  padding: 17px;
+  border-radius: 24px;
+  border: 1px solid #25273b;
+}
+
+.CARD2 h3 {
+  font-size: 30px;
+  margin: 0 16px 40px;
+  font-weight: 900;
+}
+
+.CARD2 p {
+    margin: 0 0 46px;
+      color: var(--texto);
+      font-size: 20px;
+      line-height: 1.5;
+      max-width: 720px;
+}
+
+.CARD-imagem {
+  position: relative;
+  height: 400px;
+  width: 100%;
+  border-radius: 18px;
+}
+
+.S3-Tech {
+    margin-top: 20px;
+        background: linear-gradient(120deg, #090a16, #101225, #1a1234);
+          padding: 90px 6.25%;
+          text-align: center;
+            border: 5px solid black;
+}
+
+.GRID-Card2 {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 40px;
+}
+
+footer {
+    margin-top: 20px;
+  background-color: var(--Header_Color);
+  color: white;
+    border: 5px solid black;
+}
+
+footer {
+  top: 0;
+  z-index: 10;
+  min-height: 92px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 28px 6.25%;
+  background: var(--Header_Color);
+  border-bottom: 1px solid #25273b;
+  color: var(--Header_Letras);
+}
+
+footer p {
+  color: #fff7e6;
+  margin: 0;
+  font-size: 26px;
+  font-weight: 900;
+}
