@@ -170,6 +170,68 @@ INSERT INTO CHAMADO_PECA (id_chamado, id_peca) VALUES
 
 SELECT * FROM CHAMADO_PECA;
 
+CREATE INDEX IDX_CLIENTE_NOME ON CLIENTE (cliente_nome);
+
+CREATE INDEX IDX_CHAMADO_STATUS_DATA ON CHAMADO (status_defeito, data_abertura);
+
+CREATE INDEX IDX_PECA_ESTOQUE ON PECA (quantidade_estoque);
+
+CREATE OR REPLACE VIEW vw_chamados_ativos AS
+SELECT
+  CH.id_chamado,
+  C.cliente_nome AS cliente,
+  E.tipo_equipamento,
+  E.marca,
+  E.modelo,
+  T.nome_tecnico AS tecnico,
+  CH.descricao_defeito,
+  CH.prioridade,
+  CH.data_abertura,
+  CH.status_defeito
+FROM CHAMADO AS CH
+INNER JOIN EQUIPAMENTO AS E ON E.id_equipamento = CH.id_equipamento
+INNER JOIN CLIENTE AS C ON C.id_cliente = E.id_cliente
+LEFT JOIN TECNICO AS T ON T.id_tecnico = CH.id_tecnico
+WHERE CH.status_defeito = 'ATIVO';
+
+CREATE OR REPLACE VIEW vw_pecas_estoque_baixo AS
+SELECT
+  id_peca,
+  codigo_peca,
+  nome_peca,
+  fabricante,
+  valor_unitario,
+  quantidade_estoque
+FROM PECA
+WHERE quantidade_estoque <= 10;
+
+CREATE OR REPLACE VIEW vw_pecas_chamados AS
+SELECT
+  CH.id_chamado,
+  CH.descricao_defeito,
+  CH.status_defeito,
+  P.id_peca,
+  P.codigo_peca,
+  P.nome_peca,
+  P.valor_unitario
+FROM CHAMADO_PECA AS CP
+INNER JOIN CHAMADO AS CH ON CH.id_chamado = CP.id_chamado
+INNER JOIN PECA AS P ON P.id_peca = CP.id_peca;
+
+SELECT * FROM vw_chamados_ativos ORDER BY data_abertura;
+
+SELECT * FROM vw_pecas_estoque_baixo ORDER BY quantidade_estoque;
+
+SELECT * FROM vw_pecas_chamados WHERE id_chamado = 1;
+
+SHOW INDEX FROM CLIENTE;
+SHOW INDEX FROM CHAMADO;
+SHOW INDEX FROM PECA;
+
+EXPLAIN SELECT * FROM CHAMADO
+WHERE status_defeito = 'ATIVO' AND data_abertura >= '2026-01-01'
+ORDER BY data_abertura;
+
 DELETE FROM CHAMADO_PECA;
 
 DELETE FROM CHAMADO;
