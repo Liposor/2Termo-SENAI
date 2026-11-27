@@ -1,125 +1,67 @@
-
 CREATE DATABASE IF NOT EXISTS assistencia_tecnica;
 
 USE assistencia_tecnica;
 
--- ==========================================
--- TABELA CLIENTE
--- ==========================================
-
 CREATE TABLE CLIENTE (
-    id_cliente INT AUTO_INCREMENT PRIMARY KEY,
-    cliente_nome VARCHAR(100) NOT NULL,
-    cpf_cnpj VARCHAR(18) NOT NULL UNIQUE,
-    endereco VARCHAR(150) NOT NULL,
-    telefone VARCHAR(15) NOT NULL,
-    email VARCHAR(120) NULL
+  id_cliente INT PRIMARY KEY AUTO_INCREMENT,
+  cliente_nome VARCHAR(100) NOT NULL,
+  cpf_cnpj VARCHAR(18) NOT NULL UNIQUE,
+  endereco VARCHAR(150) NOT NULL,
+  telefone VARCHAR(15) NOT NULL,
+  email VARCHAR(120) NULL
 );
-
--- ==========================================
--- TABELA TECNICO
--- ==========================================
 
 CREATE TABLE TECNICO (
-    id_tecnico INT AUTO_INCREMENT PRIMARY KEY,
-    nome_tecnico VARCHAR(100) NOT NULL,
-    especialidade VARCHAR(100) NOT NULL,
-    turno VARCHAR(20) NOT NULL,
-    telefone_tecnico VARCHAR(15) NOT NULL,
-    email_tecnico VARCHAR(120) NOT NULL,
-
-    CONSTRAINT ck_tecnico_turno
-    CHECK (turno IN ('Manhã', 'Tarde', 'Integral'))
+  id_tecnico INT PRIMARY KEY AUTO_INCREMENT,
+  nome_tecnico VARCHAR(100) NOT NULL,
+  especialidade VARCHAR(100) NOT NULL,
+  turno VARCHAR(20) NOT NULL CHECK (turno IN ('Manhã', 'Tarde', 'Integral')),
+  telefone_tecnico VARCHAR(15) NOT NULL,
+  email_tecnico VARCHAR(120) NOT NULL
 );
-
--- ==========================================
--- TABELA EQUIPAMENTO
--- ==========================================
 
 CREATE TABLE EQUIPAMENTO (
-    id_equipamento INT AUTO_INCREMENT PRIMARY KEY,
-    tipo_equipamento VARCHAR(50) NOT NULL,
-    marca VARCHAR(50) NOT NULL,
-    modelo VARCHAR(100) NOT NULL,
-    numero_serie INT NOT NULL UNIQUE,
-    data_aquisicao DATE NULL,
-    id_cliente INT NOT NULL,
-
-    CONSTRAINT fk_equipamento_cliente
-    FOREIGN KEY (id_cliente)
-    REFERENCES CLIENTE(id_cliente)
+  id_equipamento INT PRIMARY KEY AUTO_INCREMENT,
+  tipo_equipamento VARCHAR(50) NOT NULL,
+  marca VARCHAR(50) NOT NULL,
+  modelo VARCHAR(100) NOT NULL,
+  numero_serie INT NOT NULL UNIQUE,
+  data_aquisicao DATE NULL,
+  id_cliente INT NOT NULL,
+  CONSTRAINT fk_equipamento_cliente FOREIGN KEY (id_cliente) REFERENCES CLIENTE (id_cliente) ON DELETE RESTRICT ON UPDATE RESTRICT
 );
-
--- ==========================================
--- TABELA CHAMADO
--- ==========================================
 
 CREATE TABLE CHAMADO (
-    id_chamado INT AUTO_INCREMENT PRIMARY KEY,
-    descricao_defeito VARCHAR(200) NOT NULL,
-    prioridade VARCHAR(20) NOT NULL,
-    data_abertura DATETIME NOT NULL,
-    data_fechamento DATETIME NULL,
-    status_defeito VARCHAR(10) NOT NULL,
-
-    id_equipamento INT NOT NULL,
-    id_tecnico INT NULL,
-
-    CONSTRAINT ck_chamado_prioridade
-    CHECK (prioridade IN ('Baixa', 'Média', 'Alta')),
-
-    CONSTRAINT ck_chamado_status
-    CHECK (status_defeito IN ('ATIVO', 'INATIVO')),
-
-    CONSTRAINT fk_chamado_equipamento
-    FOREIGN KEY (id_equipamento)
-    REFERENCES EQUIPAMENTO(id_equipamento),
-
-    CONSTRAINT fk_chamado_tecnico
-    FOREIGN KEY (id_tecnico)
-    REFERENCES TECNICO(id_tecnico)
+  id_chamado INT PRIMARY KEY AUTO_INCREMENT,
+  descricao_defeito VARCHAR(200) NOT NULL,
+  prioridade VARCHAR(20) NOT NULL CHECK (prioridade IN ('Baixa', 'Média', 'Alta')),
+  data_abertura DATETIME NOT NULL,
+  data_fechamento DATETIME NULL,
+  status_defeito VARCHAR(10) NOT NULL CHECK (status_defeito IN ('ATIVO', 'INATIVO')),
+  id_equipamento INT NOT NULL,
+  id_tecnico INT NULL,
+  CONSTRAINT fk_chamado_equipamento FOREIGN KEY (id_equipamento) REFERENCES EQUIPAMENTO (id_equipamento) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT fk_chamado_tecnico FOREIGN KEY (id_tecnico) REFERENCES TECNICO (id_tecnico) ON DELETE RESTRICT ON UPDATE RESTRICT
 );
-
--- ==========================================
--- TABELA PECA
--- ==========================================
 
 CREATE TABLE PECA (
-    id_peca INT AUTO_INCREMENT PRIMARY KEY,
-    codigo_peca VARCHAR(30) NOT NULL UNIQUE,
-    nome_peca VARCHAR(100) NOT NULL,
-    fabricante VARCHAR(60) NOT NULL,
-    valor_unitario INT NOT NULL,
-    quantidade_estoque INT NOT NULL
+  id_peca INT PRIMARY KEY AUTO_INCREMENT,
+  codigo_peca VARCHAR(30) NOT NULL UNIQUE,
+  nome_peca VARCHAR(100) NOT NULL,
+  fabricante VARCHAR(60) NOT NULL,
+  valor_unitario DECIMAL(10,2) NOT NULL CHECK (valor_unitario >= 0),
+  quantidade_estoque INT NOT NULL CHECK (quantidade_estoque >= 0)
 );
-
--- ==========================================
--- TABELA DE RELACIONAMENTO CHAMADO_PECA
--- ==========================================
 
 CREATE TABLE CHAMADO_PECA (
-    id_chamado INT NOT NULL,
-    id_peca INT NOT NULL,
-
-    PRIMARY KEY (id_chamado, id_peca),
-
-    CONSTRAINT fk_cp_chamado
-    FOREIGN KEY (id_chamado)
-    REFERENCES CHAMADO(id_chamado),
-
-    CONSTRAINT fk_cp_peca
-    FOREIGN KEY (id_peca)
-    REFERENCES PECA(id_peca)
+  id_chamado INT NOT NULL,
+  id_peca INT NOT NULL,
+  PRIMARY KEY (id_chamado, id_peca),
+  CONSTRAINT fk_cp_chamado FOREIGN KEY (id_chamado) REFERENCES CHAMADO (id_chamado) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT fk_cp_peca FOREIGN KEY (id_peca) REFERENCES PECA (id_peca) ON DELETE RESTRICT ON UPDATE RESTRICT
 );
 
-
--- ==================================================
--- 1. INSERTS NA TABELA CLIENTE
--- ==================================================
-
-INSERT INTO CLIENTE
-(id_cliente, cliente_nome, cpf_cnpj, endereco, telefone, email)
-VALUES
+INSERT INTO CLIENTE (id_cliente, cliente_nome, cpf_cnpj, endereco, telefone, email) VALUES
 (1, 'Joao Silva', '12345678901', 'Rua das Flores, 100', '19999990001', 'joao@email.com'),
 (2, 'Maria Santos', '23456789012', 'Avenida Brasil, 200', '19999990002', 'maria@email.com'),
 (3, 'Pedro Oliveira', '34567890123', 'Rua Central, 300', '19999990003', 'pedro@email.com'),
@@ -131,17 +73,9 @@ VALUES
 (9, 'Bruno Martins', '90123456789', 'Rua do Comércio, 900', '19999990009', 'bruno@email.com'),
 (10, 'Fernanda Rocha', '01234567890', 'Rua Primavera, 1000', '19999990010', 'fernanda@email.com');
 
--- VISUALIZAR CLIENTES
 SELECT * FROM CLIENTE;
 
-
--- ==================================================
--- 2. INSERTS NA TABELA TECNICO
--- ==================================================
-
-INSERT INTO TECNICO
-(id_tecnico, nome_tecnico, especialidade, turno, telefone_tecnico, email_tecnico)
-VALUES
+INSERT INTO TECNICO (id_tecnico, nome_tecnico, especialidade, turno, telefone_tecnico, email_tecnico) VALUES
 (1, 'Carlos Mendes', 'Hardware', 'Manhã', '19988880001', 'carlos@assistencia.com'),
 (2, 'Marcos Pereira', 'Software', 'Tarde', '19988880002', 'marcos@assistencia.com'),
 (3, 'Roberto Alves', 'Redes', 'Integral', '19988880003', 'roberto@assistencia.com'),
@@ -153,17 +87,9 @@ VALUES
 (9, 'Gabriel Rocha', 'Eletronica', 'Integral', '19988880009', 'gabriel@assistencia.com'),
 (10, 'Thiago Martins', 'Hardware', 'Manhã', '19988880010', 'thiago@assistencia.com');
 
--- VISUALIZAR TECNICOS
 SELECT * FROM TECNICO;
 
-
--- ==================================================
--- 3. INSERTS NA TABELA EQUIPAMENTO
--- ==================================================
-
-INSERT INTO EQUIPAMENTO
-(id_equipamento, tipo_equipamento, marca, modelo, numero_serie, data_aquisicao, id_cliente)
-VALUES
+INSERT INTO EQUIPAMENTO (id_equipamento, tipo_equipamento, marca, modelo, numero_serie, data_aquisicao, id_cliente) VALUES
 (1, 'Notebook', 'Dell', 'Inspiron 15', 100001, '2024-01-10', 1),
 (2, 'Notebook', 'HP', 'Pavilion 15', 100002, '2023-05-20', 2),
 (3, 'Notebook', 'Lenovo', 'IdeaPad 3', 100003, '2024-03-15', 3),
@@ -175,18 +101,9 @@ VALUES
 (9, 'Notebook', 'Lenovo', 'ThinkPad E14', 100009, '2024-06-22', 9),
 (10, 'Notebook', 'Acer', 'Nitro 5', 100010, '2024-07-30', 10);
 
--- VISUALIZAR EQUIPAMENTOS
 SELECT * FROM EQUIPAMENTO;
 
-
--- ==================================================
--- 4. INSERTS NA TABELA CHAMADO
--- ==================================================
-
-INSERT INTO CHAMADO
-(id_chamado, descricao_defeito, prioridade, data_abertura,
- data_fechamento, status_defeito, id_equipamento, id_tecnico)
-VALUES
+INSERT INTO CHAMADO (id_chamado, descricao_defeito, prioridade, data_abertura, data_fechamento, status_defeito, id_equipamento, id_tecnico) VALUES
 (1, 'Computador nao liga', 'Alta', '2026-01-05 09:00:00', NULL, 'ATIVO', 1, 1),
 (2, 'Problema no sistema operacional', 'Média', '2026-01-06 10:30:00', '2026-01-08 15:00:00', 'INATIVO', 2, 2),
 (3, 'Falha na conexao de rede', 'Alta', '2026-01-07 11:00:00', NULL, 'ATIVO', 3, 3),
@@ -198,17 +115,9 @@ VALUES
 (9, 'Superaquecimento do equipamento', 'Alta', '2026-01-13 15:00:00', NULL, 'ATIVO', 9, 9),
 (10, 'Defeito na placa mae', 'Alta', '2026-01-14 16:00:00', '2026-01-16 12:00:00', 'INATIVO', 10, 10);
 
--- VISUALIZAR CHAMADOS
 SELECT * FROM CHAMADO;
 
-
--- ==================================================
--- 5. INSERTS NA TABELA PECA
--- ==================================================
-
-INSERT INTO PECA
-(id_peca, codigo_peca, nome_peca, fabricante, valor_unitario, quantidade_estoque)
-VALUES
+INSERT INTO PECA (id_peca, codigo_peca, nome_peca, fabricante, valor_unitario, quantidade_estoque) VALUES
 (1, 'PEC-001', 'Memoria RAM 8GB', 'Kingston', 180, 20),
 (2, 'PEC-002', 'SSD 480GB', 'Kingston', 250, 15),
 (3, 'PEC-003', 'HD 1TB', 'Seagate', 320, 10),
@@ -220,17 +129,9 @@ VALUES
 (9, 'PEC-009', 'Bateria para notebook', 'Acer', 280, 9),
 (10, 'PEC-010', 'Placa mae', 'Asus', 650, 5);
 
--- VISUALIZAR PECAS
 SELECT * FROM PECA;
 
-
--- ==================================================
--- 6. INSERTS NA TABELA CHAMADO_PECA
--- ==================================================
-
-INSERT INTO CHAMADO_PECA
-(id_chamado, id_peca)
-VALUES
+INSERT INTO CHAMADO_PECA (id_chamado, id_peca) VALUES
 (1, 6),
 (2, 2),
 (3, 7),
@@ -242,38 +143,19 @@ VALUES
 (9, 8),
 (10, 10);
 
--- VISUALIZAR RELACIONAMENTOS
 SELECT * FROM CHAMADO_PECA;
 
-
--- ==================================================
--- 7. DELETE - EXCLUIR OS REGISTROS DAS TABELAS
--- ==================================================
-
--- ATENCAO: ESTES COMANDOS APAGAM TODOS OS REGISTROS.
-
--- PRIMEIRO: EXCLUIR A TABELA DE RELACIONAMENTO
 DELETE FROM CHAMADO_PECA;
 
--- SEGUNDO: EXCLUIR OS CHAMADOS
 DELETE FROM CHAMADO;
 
--- TERCEIRO: EXCLUIR OS EQUIPAMENTOS
 DELETE FROM EQUIPAMENTO;
 
--- QUARTO: EXCLUIR AS PECAS
 DELETE FROM PECA;
 
--- QUINTO: EXCLUIR OS TECNICOS
 DELETE FROM TECNICO;
 
--- SEXTO: EXCLUIR OS CLIENTES
 DELETE FROM CLIENTE;
-
-
--- ==================================================
--- 8. CONFERIR SE AS TABELAS ESTAO VAZIAS
--- ==================================================
 
 SELECT * FROM CLIENTE;
 SELECT * FROM TECNICO;
