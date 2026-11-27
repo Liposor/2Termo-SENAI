@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <title>Exercícios Bootstrap</title>
+</head>
+
+<body>
+
+  
+
+  <main>
+
+    <!-- Exercício 1 - Primeiro Card -->
+    <section class="container mt-4">
+
+      <article class="card" style="width: 18rem;">
+        <section class="card-body">
+
+          <h5 class="card-title">Produtos</h5>
+
+          <p class="card-text">
+            acesse seus produtos
+          </p>
+
+          <a href="#" class="btn btn-primary">Acessar</a>
+
+        </section>
+      </article>
+
+    </section>
+
+    <!-- Exercício 2 - Grade de Cards -->
+    <section class="container mt-4">
+
+      <section class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
+
+        <section class="col">
+          <article class="card h-100">
+            <section class="card-body">
+              <h5 class="card-title">carlão é legal</h5>
+              <p class="card-text">O carlão é um cara dahora.</p>
+            </section>
+          </article>
+        </section>
+
+        <section class="col">
+          <article class="card h-100">
+            <section class="card-body">
+              <h5 class="card-title">Elétrica</h5>
+              <p class="card-text">Chico gosta</p>
+            </section>
+          </article>
+        </section>
+
+        <section class="col">
+          <article class="card h-100">
+            <section class="card-body">
+              <h5 class="card-title">Mecanica</h5>
+              <p class="card-text">TORNO</p>
+            </section>
+          </article>
+        </section>
+
+        <section class="col">
+          <article class="card h-100">
+            <section class="card-body">
+              <h5 class="card-title">Logistica</h5>
+              <p class="card-text">Não curto</p>
+            </section>
+          </article>
+        </section>
+
+        <section class="col">
+          <article class="card h-100">
+            <section class="card-body">
+              <h5 class="card-title">João Pedro</h5>
+              <p class="card-text">joao</p>
+            </section>
+          </article>
+        </section>
+
+        <section class="col">
+          <article class="card h-100">
+            <section class="card-body">
+              <h5 class="card-title">Carros</h5>
+              <p class="card-text">CARROS SÃO LEGAIS.</p>
+            </section>
+          </article>
+        </section>
+
+      </section>
+
+    </section>
+
+    <header>
+    
+      <!-- Exercício 3 - Navbar simples -->
+      <nav class="navbar navbar-expand bg-dark navbar-dark">
+        <section class="container">
+    
+          <a class="navbar-brand" href="#">Robertin</a>
+    
+          <nav class="navbar-nav">
+            <a class="nav-link active" href="#">roberto1</a>
+            <a class="nav-link" href="#">roberto2</a>
+            <a class="nav-link" href="#">roberto3</a>
+          </nav>
+    
+        </section>
+      </nav>
+    
+      <!-- Exercício 4 - Navbar responsiva -->
+      <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+        <section class="container">
+    
+          <a class="navbar-brand" href="#">RobertinTecnologico</a>
+    
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar">
+    
+            <span class="navbar-toggler-icon"></span>
+          </button>
+    
+          <section class="collapse navbar-collapse" id="menuNavbar">
+    
+            <nav class="navbar-nav ms-auto">
+              <a class="nav-link active" href="#">roberto1</a>
+              <a class="nav-link" href="#">roberto2</a>
+              <a class="nav-link" href="#">roberto3</a>
+            </nav>
+    
+          </section>
+    
+        </section>
+      </nav>
+    
+    </header>
+
+    <!-- Exercício 5 - Estados industriais -->
+    <section class="container mt-4">
+
+      <article class="card p-3 mb-2">
+        <h5>Maquina 01</h5>
+        <span class="badge bg-success">Operando</span>
+      </article>
+
+      <article class="card p-3 mb-2">
+        <h5>Maquina 02</h5>
+        <span class="badge bg-warning text-dark">Manutenção</span>
+      </article>
+
+      <article class="card p-3 mb-2">
+        <h5>Maquina 03</h5>
+        <span class="badge bg-danger">Parada</span>
+      </article>
+
+    </section>
+
+    <!-- Exercício 6 - Alertas -->
+    <section class="container mt-4">
+
+      <aside class="alert alert-success" role="alert">
+        Tudo certo e concluido
+      </aside>
+
+      <aside class="alert alert-warning" role="alert">
+        Muita atenção na Industria
+      </aside>
+
+      <aside class="alert alert-danger" role="alert">
+        Vai explodir a maquina CUIDADOOOOOOO
+      </aside>
+
+    </section>
+
+  </main>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
