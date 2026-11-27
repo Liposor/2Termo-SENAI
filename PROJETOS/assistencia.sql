@@ -1,29 +1,52 @@
 CREATE DATABASE IF NOT EXISTS assistencia_tecnica;
 
+
+
+
+
 USE assistencia_tecnica;
+
+
+
 
 CREATE TABLE CLIENTE (
   id_cliente INT PRIMARY KEY AUTO_INCREMENT,
   cliente_nome VARCHAR(100) NOT NULL,
+
   cpf_cnpj VARCHAR(18) NOT NULL UNIQUE,
+
+
   endereco VARCHAR(150) NOT NULL,
   telefone VARCHAR(15) NOT NULL,
+  
   email VARCHAR(120) NULL
+
+
+
 );
 
 CREATE TABLE TECNICO (
   id_tecnico INT PRIMARY KEY AUTO_INCREMENT,
   nome_tecnico VARCHAR(100) NOT NULL,
+
   especialidade VARCHAR(100) NOT NULL,
   turno VARCHAR(20) NOT NULL CHECK (turno IN ('Manhã', 'Tarde', 'Integral')),
   telefone_tecnico VARCHAR(15) NOT NULL,
   email_tecnico VARCHAR(120) NOT NULL
+
+
+
 );
 
 CREATE TABLE EQUIPAMENTO (
+
+
+
+
   id_equipamento INT PRIMARY KEY AUTO_INCREMENT,
   tipo_equipamento VARCHAR(50) NOT NULL,
   marca VARCHAR(50) NOT NULL,
+
   modelo VARCHAR(100) NOT NULL,
   numero_serie INT NOT NULL UNIQUE,
   data_aquisicao DATE NULL,
@@ -55,7 +78,9 @@ CREATE TABLE PECA (
 
 CREATE TABLE CHAMADO_PECA (
   id_chamado INT NOT NULL,
+    -- id_chamador INT NOT NULL,
   id_peca INT NOT NULL,
+
   PRIMARY KEY (id_chamado, id_peca),
   CONSTRAINT fk_cp_chamado FOREIGN KEY (id_chamado) REFERENCES CHAMADO (id_chamado) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT fk_cp_peca FOREIGN KEY (id_peca) REFERENCES PECA (id_peca) ON DELETE RESTRICT ON UPDATE RESTRICT
@@ -159,7 +184,12 @@ DELETE FROM CLIENTE;
 
 SELECT * FROM CLIENTE;
 SELECT * FROM TECNICO;
+
+
+
 SELECT * FROM EQUIPAMENTO;
 SELECT * FROM CHAMADO;
+
 SELECT * FROM PECA;
 SELECT * FROM CHAMADO_PECA;
+
